@@ -1,0 +1,97 @@
+
+body{
+    font-family: Arial, sans-serif;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.language-box{
+    font-size:12px;
+    opacity:0.75;
+}
+
+.language-box select{
+    width:100px;
+    padding:4px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+}
+
+.section{
+    border:1px solid #ddd;
+    padding:12px;
+    border-radius:8px;
+}
+
+h2{
+    margin-top:0;
+    font-size:18px;
+}
+
+label{
+    display:block;
+    margin-top:8px;
+    font-size:14px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:7px;
+    margin-top:3px;
+    box-sizing:border-box;
+}
+
+.checkbox-group label{
+    display:inline-block;
+    width:48%;
+}
+
+.checkbox-group input{
+    width:auto;
+}
+
+.range-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.range-row input[type="range"]{
+    flex:1;
+}
+
+.range-value{
+    width:55px;
+    text-align:right;
+    font-size:13px;
+}
+
+.full-width{
+    grid-column:1 / 4;
+}
+
+button{
+    margin-top:12px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#output{
+    margin-top:15px;
+    min-height:110px;
+}
+
+.disabled{
+    opacity:0.5;
+}
