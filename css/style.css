@@ -95,3 +95,18 @@ button{
 .disabled{
     opacity:0.5;
 }
+
+summary{
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.checkbox-group.compact{
+    margin-top:10px;
+}
+
+.checkbox-group.compact label{
+    width:48%;
+    margin-top:6px;
+}
