@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -6,113 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>角色生成器</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    max-width: 1400px;
-    margin: 20px auto;
-    padding: 20px;
-}
+<link rel="stylesheet" href="css/style.css">
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.language-box{
-    font-size:12px;
-    opacity:0.75;
-}
-
-.language-box select{
-    width:100px;
-    padding:4px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:15px;
-}
-
-.section{
-    border:1px solid #ddd;
-    padding:12px;
-    border-radius:8px;
-}
-
-h2{
-    margin-top:0;
-    font-size:18px;
-}
-
-label{
-    display:block;
-    margin-top:8px;
-    font-size:14px;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:7px;
-    margin-top:3px;
-    box-sizing:border-box;
-}
-
-.checkbox-group label{
-    display:inline-block;
-    width:48%;
-}
-
-.checkbox-group input{
-    width:auto;
-}
-
-.range-row{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.range-row input[type="range"]{
-    flex:1;
-}
-
-.range-value{
-    width:55px;
-    text-align:right;
-    font-size:13px;
-}
-
-.full-width{
-    grid-column:1 / 4;
-}
-
-button{
-    margin-top:12px;
-    padding:10px 20px;
-    cursor:pointer;
-}
-
-#output{
-    margin-top:15px;
-    min-height:110px;
-}
-
-.disabled{
-    opacity:0.5;
-}
-</style>
 </head>
 
 <body>
 
 <div class="header">
-    <h1>角色生成器</h1>
+    <h1 data-i18n="appTitle">角色生成器</h1>
 
     <div class="language-box">
-        界面语言
+        <span data-i18n="interfaceLanguage">界面语言</span>
         <select id="language" onchange="changeLanguage()">
             <option value="zh">中文</option>
             <option value="en">English</option>
@@ -124,385 +27,228 @@ button{
 <div class="grid">
 
 <div class="section">
-<h2>基本信息</h2>
+<h2 data-i18n="basicInfo">基本信息</h2>
 
-<label>角色名称</label>
+<label data-i18n="name">角色名称</label>
 <input id="name">
 
-<label>年龄</label>
+<label data-i18n="age">年龄</label>
 <input id="age" type="number">
 
-<label>性别</label>
+<label data-i18n="gender">性别</label>
 <select id="gender">
-    <option value="male">男 / Male / 男性</option>
-    <option value="female">女 / Female / 女性</option>
-    <option value="ladyboy">Ladyboy</option>
+    <option value="male" data-i18n="male">男</option>
+    <option value="female" data-i18n="female">女</option>
+    <option value="ladyboy" data-i18n="ladyboy">Ladyboy</option>
 </select>
 
-<label>身高：<span id="heightValue">170</span> cm</label>
+<label><span data-i18n="height">身高</span>：<span id="heightValue">170</span> cm</label>
 <input id="height" type="range" min="120" max="220" value="170" oninput="updateRangeValue('height')">
 
-<label>体重：<span id="weightValue">60</span> kg</label>
+<label><span data-i18n="weight">体重</span>：<span id="weightValue">60</span> kg</label>
 <input id="weight" type="range" min="30" max="150" value="60" oninput="updateRangeValue('weight')">
 </div>
 
 <div class="section">
-<h2>头发</h2>
+<h2 data-i18n="hair">头发</h2>
 
-<label>发型长度</label>
+<label data-i18n="hairLength">发型长度</label>
 <select id="hairLength">
-    <option value="">未选择</option>
-    <option value="short hair">短发 / Short hair / ショートヘア</option>
-    <option value="medium-length hair">中长发 / Medium-length hair / ミディアムヘア</option>
-    <option value="long hair">长发 / Long hair / ロングヘア</option>
-    <option value="very long hair">超长发 / Very long hair / 超ロングヘア</option>
-    <option value="bob cut">波波头 / Bob cut / ボブカット</option>
-    <option value="ponytail">马尾 / Ponytail / ポニーテール</option>
-    <option value="twin tails">双马尾 / Twin tails / ツインテール</option>
-    <option value="buzz cut">寸头 / Buzz cut / 丸刈り</option>
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="short hair" data-i18n="shortHair">短发</option>
+    <option value="medium-length hair" data-i18n="mediumHair">中长发</option>
+    <option value="long hair" data-i18n="longHair">长发</option>
+    <option value="very long hair" data-i18n="veryLongHair">超长发</option>
+    <option value="bob cut" data-i18n="bobCut">波波头</option>
+    <option value="ponytail" data-i18n="ponytail">马尾</option>
+    <option value="twin tails" data-i18n="twinTails">双马尾</option>
+    <option value="buzz cut" data-i18n="buzzCut">寸头</option>
 </select>
 
-<label>发色</label>
+<label data-i18n="hairColor">发色</label>
 <select id="hairColor">
-    <option value="">未选择</option>
-    <option value="black hair">黑发 / Black hair / 黒髪</option>
-    <option value="brown hair">棕发 / Brown hair / 茶髪</option>
-    <option value="blonde hair">金发 / Blonde hair / 金髪</option>
-    <option value="silver hair">银发 / Silver hair / 銀髪</option>
-    <option value="white hair">白发 / White hair / 白髪</option>
-    <option value="red hair">红发 / Red hair / 赤髪</option>
-    <option value="blue hair">蓝发 / Blue hair / 青髪</option>
-    <option value="pink hair">粉发 / Pink hair / ピンク髪</option>
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="black hair" data-i18n="blackHair">黑发</option>
+    <option value="brown hair" data-i18n="brownHair">棕发</option>
+    <option value="blonde hair" data-i18n="blondeHair">金发</option>
+    <option value="silver hair" data-i18n="silverHair">银发</option>
+    <option value="white hair" data-i18n="whiteHair">白发</option>
+    <option value="red hair" data-i18n="redHair">红发</option>
+    <option value="blue hair" data-i18n="blueHair">蓝发</option>
+    <option value="pink hair" data-i18n="pinkHair">粉发</option>
 </select>
 
-<label>发质 / 发型状态</label>
+<label data-i18n="hairTexture">发质 / 发型状态</label>
 <select id="hairTexture">
-    <option value="">未选择</option>
-    <option value="straight hair">直发 / Straight hair / ストレートヘア</option>
-    <option value="wavy hair">波浪发 / Wavy hair / ウェーブヘア</option>
-    <option value="curly hair">卷发 / Curly hair / カールヘア</option>
-    <option value="messy hair">凌乱发 / Messy hair / 乱れ髪</option>
-    <option value="smooth hair">顺滑发 / Smooth hair / なめらかな髪</option>
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="straight hair" data-i18n="straightHair">直发</option>
+    <option value="wavy hair" data-i18n="wavyHair">波浪发</option>
+    <option value="curly hair" data-i18n="curlyHair">卷发</option>
+    <option value="messy hair" data-i18n="messyHair">凌乱发</option>
+    <option value="smooth hair" data-i18n="smoothHair">顺滑发</option>
 </select>
 </div>
 
 <div class="section">
-<h2>身材</h2>
+<h2 data-i18n="bodyShape">身材</h2>
 
-<label>胸围：<span id="bustValue">85</span> cm</label>
+<label><span data-i18n="bust">胸围</span>：<span id="bustValue">85</span> cm</label>
 <input id="bust" type="range" min="50" max="130" value="85" oninput="updateRangeValue('bust')">
 
-<label>腰围：<span id="waistValue">60</span> cm</label>
+<label><span data-i18n="waist">腰围</span>：<span id="waistValue">60</span> cm</label>
 <input id="waist" type="range" min="40" max="120" value="60" oninput="updateRangeValue('waist')">
 
-<label>臀围：<span id="hipsValue">88</span> cm</label>
+<label><span data-i18n="hips">臀围</span>：<span id="hipsValue">88</span> cm</label>
 <input id="hips" type="range" min="50" max="140" value="88" oninput="updateRangeValue('hips')">
 </div>
 
 <div class="section">
-<h2>面部与装饰</h2>
+<h2 data-i18n="faceAndAccessories">面部与装饰</h2>
 
-<label>面部特征</label>
+<label data-i18n="face">面部特征</label>
 <input id="face" placeholder="sharp eyes, beauty mark, freckles">
 
-<label>常用表情</label>
+<label data-i18n="expression">常用表情</label>
 <select id="expression">
-    <option value="">未选择</option>
-    <option value="neutral expression">平静 / Neutral / 無表情</option>
-    <option value="gentle smile">温柔微笑 / Gentle smile / 優しい笑顔</option>
-    <option value="confident smile">自信微笑 / Confident smile / 自信のある笑み</option>
-    <option value="serious expression">严肃 / Serious / 真剣な表情</option>
-    <option value="melancholic expression">忧郁 / Melancholic / 憂鬱な表情</option>
-    <option value="angry expression">生气 / Angry / 怒った表情</option>
-    <option value="shy expression">害羞 / Shy / 恥ずかしそうな表情</option>
-    <option value="mysterious smile">神秘微笑 / Mysterious smile / 謎めいた笑み</option>
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="neutral expression" data-i18n="neutralExpression">平静</option>
+    <option value="gentle smile" data-i18n="gentleSmile">温柔微笑</option>
+    <option value="confident smile" data-i18n="confidentSmile">自信微笑</option>
+    <option value="serious expression" data-i18n="seriousExpression">严肃</option>
+    <option value="melancholic expression" data-i18n="melancholicExpression">忧郁</option>
+    <option value="angry expression" data-i18n="angryExpression">生气</option>
+    <option value="shy expression" data-i18n="shyExpression">害羞</option>
+    <option value="mysterious smile" data-i18n="mysteriousSmile">神秘微笑</option>
 </select>
 
-<label>帽子</label>
+<label data-i18n="hat">帽子</label>
 <select id="hat">
-    <option value="">None</option>
-    <option value="bandana">头巾 / Bandana / バンダナ</option>
-    <option value="baseball cap">棒球帽 / Baseball cap / 野球帽</option>
-    <option value="beret">贝雷帽 / Beret / ベレー帽</option>
-    <option value="beanie">针织帽 / Beanie / ニット帽</option>
-    <option value="wide-brim hat">宽檐帽 / Wide-brim hat / つば広帽</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="bandana" data-i18n="bandana">头巾</option>
+    <option value="baseball cap" data-i18n="baseballCap">棒球帽</option>
+    <option value="beret" data-i18n="beret">贝雷帽</option>
+    <option value="beanie" data-i18n="beanie">针织帽</option>
+    <option value="wide-brim hat" data-i18n="wideBrimHat">宽檐帽</option>
 </select>
 
-<label>颈部装饰</label>
+<label data-i18n="neck">颈部装饰</label>
 <select id="neck">
-    <option value="">None</option>
-    <option value="necklace">项链 / Necklace / ネックレス</option>
-    <option value="choker">项圈 / Choker / チョーカー</option>
-    <option value="scarf">围巾 / Scarf / マフラー</option>
-    <option value="silk scarf">丝巾 / Silk scarf / シルクスカーフ</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="necklace" data-i18n="necklace">项链</option>
+    <option value="choker" data-i18n="choker">项圈</option>
+    <option value="scarf" data-i18n="scarf">围巾</option>
+    <option value="silk scarf" data-i18n="silkScarf">丝巾</option>
 </select>
 </div>
 
 <div class="section">
-<h2>穿孔情况</h2>
+<h2 data-i18n="piercingStatus">穿孔情况</h2>
 
 <div class="checkbox-group">
-<label><input type="checkbox" value="nose ring" class="piercing"> 鼻环</label>
-<label><input type="checkbox" value="earrings" class="piercing"> 耳环</label>
-<label><input type="checkbox" value="tongue piercing" class="piercing"> 舌环</label>
-<label><input type="checkbox" value="navel piercing" class="piercing"> 肚脐环</label>
-<label><input type="checkbox" value="nipple piercing" class="piercing"> 乳环</label>
-<label><input type="checkbox" value="intimate piercing" class="piercing"> 私密穿孔</label>
+<label><input type="checkbox" value="nose ring" class="piercing"> <span data-i18n="noseRing">鼻环</span></label>
+<label><input type="checkbox" value="earrings" class="piercing"> <span data-i18n="earrings">耳环</span></label>
+<label><input type="checkbox" value="tongue piercing" class="piercing"> <span data-i18n="tonguePiercing">舌环</span></label>
+<label><input type="checkbox" value="navel piercing" class="piercing"> <span data-i18n="navelPiercing">肚脐环</span></label>
+<label><input type="checkbox" value="nipple piercing" class="piercing"> <span data-i18n="nipplePiercing">乳环</span></label>
+<label><input type="checkbox" value="intimate piercing" class="piercing"> <span data-i18n="intimatePiercing">私密穿孔</span></label>
 </div>
 </div>
 
 <div class="section">
-<h2>服装</h2>
+<h2 data-i18n="clothing">服装</h2>
 
-<label>连体衣</label>
+<label data-i18n="onesuit">连体衣</label>
 <select id="onesuit" onchange="toggleClothes()">
-    <option value="">None</option>
-    <option value="dress">连衣裙 / Dress / ワンピース</option>
-    <option value="bikini">比基尼 / Bikini / ビキニ</option>
-    <option value="one-piece swimsuit">连体泳衣 / One-piece swimsuit / ワンピース水着</option>
-    <option value="jumpsuit">连体裤 / Jumpsuit / ジャンプスーツ</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="dress" data-i18n="dress">连衣裙</option>
+    <option value="bikini" data-i18n="bikini">比基尼</option>
+    <option value="one-piece swimsuit" data-i18n="onePieceSwimsuit">连体泳衣</option>
+    <option value="jumpsuit" data-i18n="jumpsuit">连体裤</option>
 </select>
 
 <div id="topBottomArea">
-<label>上衣</label>
+<label data-i18n="top">上衣</label>
 <select id="top">
-    <option value="">None</option>
-    <option value="t-shirt">T恤 / T-shirt / Tシャツ</option>
-    <option value="shirt">衬衫 / Shirt / シャツ</option>
-    <option value="hoodie">卫衣 / Hoodie / パーカー</option>
-    <option value="sweater">毛衣 / Sweater / セーター</option>
-    <option value="jacket">夹克 / Jacket / ジャケット</option>
-    <option value="tank top">背心 / Tank top / タンクトップ</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="t-shirt" data-i18n="tShirt">T恤</option>
+    <option value="shirt" data-i18n="shirt">衬衫</option>
+    <option value="hoodie" data-i18n="hoodie">卫衣</option>
+    <option value="sweater" data-i18n="sweater">毛衣</option>
+    <option value="jacket" data-i18n="jacket">夹克</option>
+    <option value="tank top" data-i18n="tankTop">背心</option>
 </select>
 
-<label>下衣</label>
+<label data-i18n="bottom">下衣</label>
 <select id="bottom">
-    <option value="">None</option>
-    <option value="jeans">牛仔裤 / Jeans / ジーンズ</option>
-    <option value="shorts">短裤 / Shorts / ショートパンツ</option>
-    <option value="skirt">裙子 / Skirt / スカート</option>
-    <option value="cargo pants">工装裤 / Cargo pants / カーゴパンツ</option>
-    <option value="pleated skirt">百褶裙 / Pleated skirt / プリーツスカート</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="jeans" data-i18n="jeans">牛仔裤</option>
+    <option value="shorts" data-i18n="shorts">短裤</option>
+    <option value="skirt" data-i18n="skirt">裙子</option>
+    <option value="cargo pants" data-i18n="cargoPants">工装裤</option>
+    <option value="pleated skirt" data-i18n="pleatedSkirt">百褶裙</option>
 </select>
 </div>
 </div>
 
 <div class="section">
-<h2>四肢与鞋</h2>
+<h2 data-i18n="limbsAndShoes">四肢与鞋</h2>
 
-<label>手部</label>
+<label data-i18n="hand">手部</label>
 <select id="hand">
-    <option value="">None</option>
-    <option value="gloves">手套 / Gloves / 手袋</option>
-    <option value="fingerless gloves">露指手套 / Fingerless gloves / 指なし手袋</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="gloves" data-i18n="gloves">手套</option>
+    <option value="fingerless gloves" data-i18n="fingerlessGloves">露指手套</option>
 </select>
 
-<label>腿部</label>
+<label data-i18n="leg">腿部</label>
 <select id="leg">
-    <option value="">None</option>
-    <option value="knee socks">及膝袜 / Knee socks / ニーソックス</option>
-    <option value="thigh highs">过膝袜 / Thigh highs / サイハイソックス</option>
-    <option value="pantyhose">连裤袜 / Pantyhose / パンスト</option>
-    <option value="stockings">长筒袜 / Stockings / ストッキング</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="knee socks" data-i18n="kneeSocks">及膝袜</option>
+    <option value="thigh highs" data-i18n="thighHighs">过膝袜</option>
+    <option value="pantyhose" data-i18n="pantyhose">连裤袜</option>
+    <option value="stockings" data-i18n="stockings">长筒袜</option>
 </select>
 
-<label>鞋子</label>
+<label data-i18n="shoes">鞋子</label>
 <select id="shoes">
-    <option value="">None</option>
-    <option value="loafers">乐福鞋 / Loafers / ローファー</option>
-    <option value="boots">靴子 / Boots / ブーツ</option>
-    <option value="ballet flats">芭蕾平底鞋 / Ballet flats / バレエシューズ</option>
-    <option value="sneakers">运动鞋 / Sneakers / スニーカー</option>
-    <option value="barefoot">赤脚 / Barefoot / 裸足</option>
+    <option value="" data-i18n="none">None</option>
+    <option value="loafers" data-i18n="loafers">乐福鞋</option>
+    <option value="boots" data-i18n="boots">靴子</option>
+    <option value="ballet flats" data-i18n="balletFlats">芭蕾平底鞋</option>
+    <option value="sneakers" data-i18n="sneakers">运动鞋</option>
+    <option value="barefoot" data-i18n="barefoot">赤脚</option>
 </select>
 </div>
 
 <div class="section">
-<h2>性格标签</h2>
+<h2 data-i18n="personalityTags">性格标签</h2>
 
 <div class="checkbox-group">
-<label><input type="checkbox" value="calm" class="personality"> 冷静</label>
-<label><input type="checkbox" value="gentle" class="personality"> 温柔</label>
-<label><input type="checkbox" value="cheerful" class="personality"> 开朗</label>
-<label><input type="checkbox" value="introverted" class="personality"> 内向</label>
-<label><input type="checkbox" value="mysterious" class="personality"> 神秘</label>
-<label><input type="checkbox" value="rebellious" class="personality"> 叛逆</label>
-<label><input type="checkbox" value="analytical" class="personality"> 理性</label>
-<label><input type="checkbox" value="elegant" class="personality"> 优雅</label>
+<label><input type="checkbox" value="calm" class="personality"> <span data-i18n="calm">冷静</span></label>
+<label><input type="checkbox" value="gentle" class="personality"> <span data-i18n="gentle">温柔</span></label>
+<label><input type="checkbox" value="cheerful" class="personality"> <span data-i18n="cheerful">开朗</span></label>
+<label><input type="checkbox" value="introverted" class="personality"> <span data-i18n="introverted">内向</span></label>
+<label><input type="checkbox" value="mysterious" class="personality"> <span data-i18n="mysterious">神秘</span></label>
+<label><input type="checkbox" value="rebellious" class="personality"> <span data-i18n="rebellious">叛逆</span></label>
+<label><input type="checkbox" value="analytical" class="personality"> <span data-i18n="analytical">理性</span></label>
+<label><input type="checkbox" value="elegant" class="personality"> <span data-i18n="elegant">优雅</span></label>
 </div>
 
-<label>自定义性格标签</label>
+<label data-i18n="customPersonality">自定义性格标签</label>
 <input id="customPersonality" placeholder="sarcastic, poetic, obsessive">
 </div>
 
 <div class="section full-width">
-<button onclick="generatePrompt()">生成Prompt</button>
-<button onclick="copyPrompt()">复制Prompt</button>
-<button onclick="saveJSON()">保存角色为JSON</button>
+<button onclick="generatePrompt()" data-i18n="generatePrompt">生成Prompt</button>
+<button onclick="copyPrompt()" data-i18n="copyPrompt">复制Prompt</button>
+<button onclick="saveJSON()" data-i18n="saveJSON">保存角色为JSON</button>
 
 <textarea id="output"></textarea>
 </div>
 
 </div>
 
-<script>
-function getValue(id){
-    return document.getElementById(id).value.trim();
-}
-
-function getCheckedValues(className){
-    return [...document.querySelectorAll("." + className + ":checked")]
-        .map(item => item.value);
-}
-
-function updateRangeValue(id){
-    document.getElementById(id + "Value").textContent = document.getElementById(id).value;
-}
-
-function toggleClothes(){
-    const onesuit = getValue("onesuit");
-    const top = document.getElementById("top");
-    const bottom = document.getElementById("bottom");
-    const area = document.getElementById("topBottomArea");
-
-    if(onesuit !== ""){
-        top.disabled = true;
-        bottom.disabled = true;
-        top.value = "";
-        bottom.value = "";
-        area.classList.add("disabled");
-    }else{
-        top.disabled = false;
-        bottom.disabled = false;
-        area.classList.remove("disabled");
-    }
-}
-
-function getCharacterData(){
-    const customPersonality = getValue("customPersonality")
-        .split(",")
-        .map(item => item.trim())
-        .filter(item => item !== "");
-
-    return {
-        name: getValue("name"),
-        age: getValue("age"),
-        gender: getValue("gender"),
-
-        body: {
-            heightCm: getValue("height"),
-            weightKg: getValue("weight"),
-            bustCm: getValue("bust"),
-            waistCm: getValue("waist"),
-            hipsCm: getValue("hips")
-        },
-
-        hair: {
-            length: getValue("hairLength"),
-            color: getValue("hairColor"),
-            texture: getValue("hairTexture")
-        },
-
-        appearance: {
-            face: getValue("face"),
-            expression: getValue("expression"),
-            hat: getValue("hat"),
-            neck: getValue("neck"),
-            piercings: getCheckedValues("piercing")
-        },
-
-        clothing: {
-            onesuit: getValue("onesuit"),
-            top: getValue("top"),
-            bottom: getValue("bottom"),
-            hand: getValue("hand"),
-            leg: getValue("leg"),
-            shoes: getValue("shoes")
-        },
-
-        personality: [
-            ...getCheckedValues("personality"),
-            ...customPersonality
-        ]
-    };
-}
-
-function generatePrompt(){
-    const data = getCharacterData();
-
-    let promptParts = [
-        "character design",
-        data.name,
-        data.age ? data.age + " years old" : "",
-        data.gender,
-
-        data.body.heightCm ? data.body.heightCm + " cm tall" : "",
-        data.body.weightKg ? data.body.weightKg + " kg" : "",
-        data.body.bustCm && data.body.waistCm && data.body.hipsCm
-            ? data.body.bustCm + "-" + data.body.waistCm + "-" + data.body.hipsCm + " body measurements"
-            : "",
-
-        data.hair.length,
-        data.hair.color,
-        data.hair.texture,
-
-        data.appearance.face,
-        data.appearance.expression,
-        data.appearance.hat,
-        data.appearance.neck,
-        ...data.appearance.piercings,
-
-        data.clothing.onesuit,
-        data.clothing.top,
-        data.clothing.bottom,
-        data.clothing.hand,
-        data.clothing.leg,
-        data.clothing.shoes,
-
-        ...data.personality
-    ];
-
-    document.getElementById("output").value = promptParts
-        .filter(item => item && item !== "None")
-        .join(", ");
-}
-
-function copyPrompt(){
-    const text = getValue("output");
-
-    if(!text){
-        alert("请先生成Prompt");
-        return;
-    }
-
-    navigator.clipboard.writeText(text);
-    alert("已复制");
-}
-
-function saveJSON(){
-    const data = getCharacterData();
-    const json = JSON.stringify(data, null, 2);
-
-    const blob = new Blob([json], {type: "application/json"});
-    const url = URL.createObjectURL(blob);
-
-    const fileName = data.name ? data.name + ".json" : "character.json";
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = fileName;
-    a.click();
-
-    URL.revokeObjectURL(url);
-}
-
-function changeLanguage(){
-    alert("这一版先把语言放到右上角。真正切换界面文本可以下一版做。");
-}
-
-toggleClothes();
-</script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
-```
