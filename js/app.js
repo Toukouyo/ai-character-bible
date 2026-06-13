@@ -11,6 +11,13 @@ const translations = {
         ladyboy: "Ladyboy",
         height: "身高",
         weight: "体重",
+        nationalityStatus: "国籍 / 族裔",
+        chinese: "中",
+        british: "英",
+        american: "美",
+        japanese: "日",
+        french: "法",
+        black: "黑人",
 
         hair: "头发",
         hairLength: "发型长度",
@@ -142,6 +149,13 @@ const translations = {
         ladyboy: "Ladyboy",
         height: "Height",
         weight: "Weight",
+        nationalityStatus: "Nationality / Ethnicity",
+        chinese: "Chinese",
+        british: "British",
+        american: "American",
+        japanese: "Japanese",
+        french: "French",
+        black: "Black",
 
         hair: "Hair",
         hairLength: "Hair Length",
@@ -273,6 +287,13 @@ const translations = {
         ladyboy: "Ladyboy",
         height: "身長",
         weight: "体重",
+        nationalityStatus: "国籍 / エスニシティ",
+        chinese: "中",
+        british: "英",
+        american: "米",
+        japanese: "日",
+        french: "仏",
+        black: "黒人",
 
         hair: "髪",
         hairLength: "髪の長さ",
@@ -411,6 +432,24 @@ function getCheckedValues(className){
         .map(item => item.value);
 }
 
+function limitNationalitySelection(changedItem){
+    const selected = document.querySelectorAll(".nationality:checked");
+
+    if(selected.length > 2){
+        changedItem.checked = false;
+    }
+}
+
+function getNationalityPrompt(){
+    const selected = getCheckedValues("nationality");
+
+    if(selected.length === 2){
+        return "mixed race, " + selected.join(" and ");
+    }
+
+    return selected[0] || "";
+}
+
 function updateRangeValue(id){
     document.getElementById(id + "Value").textContent = document.getElementById(id).value;
 }
@@ -444,6 +483,7 @@ function getCharacterData(){
         name: getValue("name"),
         age: getValue("age"),
         gender: getValue("gender"),
+        nationality: getCheckedValues("nationality"),
 
         body: {
             heightCm: getValue("height"),
@@ -491,6 +531,7 @@ function generatePrompt(){
         data.name,
         data.age ? data.age + " years old" : "",
         data.gender,
+        getNationalityPrompt(),
 
         data.body.heightCm ? data.body.heightCm + " cm tall" : "",
         data.body.weightKg ? data.body.weightKg + " kg" : "",

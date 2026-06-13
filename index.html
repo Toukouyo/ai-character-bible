@@ -42,11 +42,35 @@
     <option value="ladyboy" data-i18n="ladyboy">Ladyboy</option>
 </select>
 
-<label><span data-i18n="height">身高</span>：<span id="heightValue">170</span> cm</label>
-<input id="height" type="range" min="120" max="220" value="170" oninput="updateRangeValue('height')">
+<details>
+    <summary data-i18n="nationalityStatus">国籍 / 族裔</summary>
+    <div class="checkbox-group compact">
+        <label><input type="checkbox" value="Chinese" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="chinese">中</span></label>
+        <label><input type="checkbox" value="British" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="british">英</span></label>
+        <label><input type="checkbox" value="American" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="american">美</span></label>
+        <label><input type="checkbox" value="Japanese" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="japanese">日</span></label>
+        <label><input type="checkbox" value="French" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="french">法</span></label>
+        <label><input type="checkbox" value="Black" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="black">黑人</span></label>
+    </div>
+</details>
 
-<label><span data-i18n="weight">体重</span>：<span id="weightValue">60</span> kg</label>
-<input id="weight" type="range" min="30" max="150" value="60" oninput="updateRangeValue('weight')">
+<details>
+    <summary data-i18n="personalityTags">性格标签</summary>
+
+    <div class="checkbox-group compact">
+    <label><input type="checkbox" value="calm" class="personality"> <span data-i18n="calm">冷静</span></label>
+    <label><input type="checkbox" value="gentle" class="personality"> <span data-i18n="gentle">温柔</span></label>
+    <label><input type="checkbox" value="cheerful" class="personality"> <span data-i18n="cheerful">开朗</span></label>
+    <label><input type="checkbox" value="introverted" class="personality"> <span data-i18n="introverted">内向</span></label>
+    <label><input type="checkbox" value="mysterious" class="personality"> <span data-i18n="mysterious">神秘</span></label>
+    <label><input type="checkbox" value="rebellious" class="personality"> <span data-i18n="rebellious">叛逆</span></label>
+    <label><input type="checkbox" value="analytical" class="personality"> <span data-i18n="analytical">理性</span></label>
+    <label><input type="checkbox" value="elegant" class="personality"> <span data-i18n="elegant">优雅</span></label>
+    </div>
+
+    <label data-i18n="customPersonality">自定义性格标签</label>
+    <input id="customPersonality" placeholder="sarcastic, poetic, obsessive">
+</details>
 </div>
 
 <div class="section">
@@ -100,6 +124,12 @@
 
 <label><span data-i18n="hips">臀围</span>：<span id="hipsValue">88</span> cm</label>
 <input id="hips" type="range" min="50" max="140" value="88" oninput="updateRangeValue('hips')">
+
+<label><span data-i18n="height">身高</span>：<span id="heightValue">170</span> cm</label>
+<input id="height" type="range" min="120" max="220" value="170" oninput="updateRangeValue('height')">
+
+<label><span data-i18n="weight">体重</span>：<span id="weightValue">60</span> kg</label>
+<input id="weight" type="range" min="30" max="150" value="60" oninput="updateRangeValue('weight')">
 </div>
 
 <div class="section">
@@ -259,24 +289,6 @@
     <option value="sneakers" data-i18n="sneakers">运动鞋</option>
     <option value="barefoot" data-i18n="barefoot">赤脚</option>
 </select>
-</div>
-
-<div class="section">
-<h2 data-i18n="personalityTags">性格标签</h2>
-
-<div class="checkbox-group">
-<label><input type="checkbox" value="calm" class="personality"> <span data-i18n="calm">冷静</span></label>
-<label><input type="checkbox" value="gentle" class="personality"> <span data-i18n="gentle">温柔</span></label>
-<label><input type="checkbox" value="cheerful" class="personality"> <span data-i18n="cheerful">开朗</span></label>
-<label><input type="checkbox" value="introverted" class="personality"> <span data-i18n="introverted">内向</span></label>
-<label><input type="checkbox" value="mysterious" class="personality"> <span data-i18n="mysterious">神秘</span></label>
-<label><input type="checkbox" value="rebellious" class="personality"> <span data-i18n="rebellious">叛逆</span></label>
-<label><input type="checkbox" value="analytical" class="personality"> <span data-i18n="analytical">理性</span></label>
-<label><input type="checkbox" value="elegant" class="personality"> <span data-i18n="elegant">优雅</span></label>
-</div>
-
-<label data-i18n="customPersonality">自定义性格标签</label>
-<input id="customPersonality" placeholder="sarcastic, poetic, obsessive">
 </div>
 
 <div class="section full-width">
