@@ -43,16 +43,70 @@
 </select>
 
 <details>
-    <summary data-i18n="nationalityStatus">国籍 / 族裔</summary>
+    <summary data-i18n="nationalitySection">国籍</summary>
     <div class="checkbox-group compact">
-        <label><input type="checkbox" value="Chinese" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="chinese">中</span></label>
-        <label><input type="checkbox" value="British" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="british">英</span></label>
-        <label><input type="checkbox" value="American" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="american">美</span></label>
-        <label><input type="checkbox" value="Japanese" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="japanese">日</span></label>
-        <label><input type="checkbox" value="French" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="french">法</span></label>
-        <label><input type="checkbox" value="Black" class="nationality" onchange="limitNationalitySelection(this)"> <span data-i18n="black">黑人</span></label>
+        <label><input type="checkbox" value="Chinese nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="chineseNationality">中国</span></label>
+        <label><input type="checkbox" value="Japanese nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="japaneseNationality">日本</span></label>
+        <label><input type="checkbox" value="American nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="americanNationality">美国</span></label>
+        <label><input type="checkbox" value="British nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="britishNationality">英国</span></label>
+        <label><input type="checkbox" value="French nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="frenchNationality">法国</span></label>
+        <label><input type="checkbox" value="Korean nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="koreanNationality">韩国</span></label>
+        <label><input type="checkbox" value="German nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="germanNationality">德国</span></label>
+        <label><input type="checkbox" value="Russian nationality" class="nationality" onchange="limitSelection(this, 'nationality', 2)"> <span data-i18n="russianNationality">俄罗斯</span></label>
     </div>
+    <label data-i18n="customNationality">自定义国籍</label>
+    <input id="customNationality" placeholder="Italian nationality, Canadian nationality">
 </details>
+
+<details>
+    <summary data-i18n="ethnicitySection">族裔</summary>
+    <div class="checkbox-group compact">
+        <label><input type="checkbox" value="East Asian ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="eastAsianEthnicity">东亚</span></label>
+        <label><input type="checkbox" value="Han Chinese ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="hanChineseEthnicity">汉族</span></label>
+        <label><input type="checkbox" value="Japanese ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="japaneseEthnicity">日本族裔</span></label>
+        <label><input type="checkbox" value="Korean ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="koreanEthnicity">韩族</span></label>
+        <label><input type="checkbox" value="White European ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="whiteEuropeanEthnicity">白人/欧洲</span></label>
+        <label><input type="checkbox" value="Black African ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="blackAfricanEthnicity">黑人/非洲</span></label>
+        <label><input type="checkbox" value="Latina ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="latinaEthnicity">拉丁裔</span></label>
+        <label><input type="checkbox" value="Middle Eastern ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="middleEasternEthnicity">中东</span></label>
+        <label><input type="checkbox" value="South Asian ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="southAsianEthnicity">南亚</span></label>
+        <label><input type="checkbox" value="Southeast Asian ethnicity" class="ethnicity" onchange="limitSelection(this, 'ethnicity', 2)"> <span data-i18n="southeastAsianEthnicity">东南亚</span></label>
+    </div>
+    <label data-i18n="customEthnicity">自定义族裔</label>
+    <input id="customEthnicity" placeholder="mixed Eurasian ethnicity">
+</details>
+
+<label data-i18n="skinTone">肤色</label>
+<select id="skinTone">
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="porcelain skin" data-i18n="porcelainSkin">瓷白</option>
+    <option value="fair skin" data-i18n="fairSkin">白皙</option>
+    <option value="light skin" data-i18n="lightSkin">浅肤色</option>
+    <option value="medium skin" data-i18n="mediumSkin">中等肤色</option>
+    <option value="olive skin" data-i18n="oliveSkin">橄榄肤色</option>
+    <option value="tan skin" data-i18n="tanSkin">小麦/古铜</option>
+    <option value="brown skin" data-i18n="brownSkin">棕色皮肤</option>
+    <option value="dark skin" data-i18n="darkSkin">深色皮肤</option>
+</select>
+
+<label data-i18n="occupation">职业 / 身份</label>
+<select id="occupation">
+    <option value="" data-i18n="notSelected">未选择</option>
+    <option value="idol" data-i18n="idol">偶像</option>
+    <option value="assassin" data-i18n="assassin">杀手</option>
+    <option value="student" data-i18n="student">学生</option>
+    <option value="office lady" data-i18n="officeLady">OL</option>
+    <option value="teacher" data-i18n="teacher">教师</option>
+    <option value="detective" data-i18n="detective">侦探</option>
+    <option value="doctor" data-i18n="doctor">医生</option>
+    <option value="nurse" data-i18n="nurse">护士</option>
+    <option value="soldier" data-i18n="soldier">军人</option>
+    <option value="princess" data-i18n="princess">公主</option>
+    <option value="queen" data-i18n="queen">女王</option>
+    <option value="witch" data-i18n="witch">女巫</option>
+</select>
+<label data-i18n="customOccupation">自定义职业 / 身份</label>
+<input id="customOccupation" placeholder="philosopher, judge, rebel leader">
 
 <details>
     <summary data-i18n="personalityTags">性格标签</summary>

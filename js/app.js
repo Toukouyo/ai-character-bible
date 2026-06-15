@@ -19,6 +19,52 @@ const translations = {
         french: "法",
         black: "黑人",
 
+        nationalitySection: "国籍",
+        ethnicitySection: "族裔",
+        chineseNationality: "中国",
+        japaneseNationality: "日本",
+        americanNationality: "美国",
+        britishNationality: "英国",
+        frenchNationality: "法国",
+        koreanNationality: "韩国",
+        germanNationality: "德国",
+        russianNationality: "俄罗斯",
+        customNationality: "自定义国籍",
+        eastAsianEthnicity: "东亚",
+        hanChineseEthnicity: "汉族",
+        japaneseEthnicity: "日本族裔",
+        koreanEthnicity: "韩族",
+        whiteEuropeanEthnicity: "白人/欧洲",
+        blackAfricanEthnicity: "黑人/非洲",
+        latinaEthnicity: "拉丁裔",
+        middleEasternEthnicity: "中东",
+        southAsianEthnicity: "南亚",
+        southeastAsianEthnicity: "东南亚",
+        customEthnicity: "自定义族裔",
+        skinTone: "肤色",
+        porcelainSkin: "瓷白",
+        fairSkin: "白皙",
+        lightSkin: "浅肤色",
+        mediumSkin: "中等肤色",
+        oliveSkin: "橄榄肤色",
+        tanSkin: "小麦/古铜",
+        brownSkin: "棕色皮肤",
+        darkSkin: "深色皮肤",
+        occupation: "职业 / 身份",
+        idol: "偶像",
+        assassin: "杀手",
+        student: "学生",
+        officeLady: "OL",
+        teacher: "教师",
+        detective: "侦探",
+        doctor: "医生",
+        nurse: "护士",
+        soldier: "军人",
+        princess: "公主",
+        queen: "女王",
+        witch: "女巫",
+        customOccupation: "自定义职业 / 身份",
+
         hair: "头发",
         hairLength: "发型长度",
         hairColor: "发色",
@@ -156,6 +202,52 @@ const translations = {
         japanese: "Japanese",
         french: "French",
         black: "Black",
+
+        nationalitySection: "Nationality",
+        ethnicitySection: "Ethnicity",
+        chineseNationality: "China",
+        japaneseNationality: "Japan",
+        americanNationality: "United States",
+        britishNationality: "United Kingdom",
+        frenchNationality: "France",
+        koreanNationality: "Korea",
+        germanNationality: "Germany",
+        russianNationality: "Russia",
+        customNationality: "Custom Nationality",
+        eastAsianEthnicity: "East Asian",
+        hanChineseEthnicity: "Han Chinese",
+        japaneseEthnicity: "Japanese",
+        koreanEthnicity: "Korean",
+        whiteEuropeanEthnicity: "White / European",
+        blackAfricanEthnicity: "Black / African",
+        latinaEthnicity: "Latina",
+        middleEasternEthnicity: "Middle Eastern",
+        southAsianEthnicity: "South Asian",
+        southeastAsianEthnicity: "Southeast Asian",
+        customEthnicity: "Custom Ethnicity",
+        skinTone: "Skin Tone",
+        porcelainSkin: "Porcelain skin",
+        fairSkin: "Fair skin",
+        lightSkin: "Light skin",
+        mediumSkin: "Medium skin",
+        oliveSkin: "Olive skin",
+        tanSkin: "Tan skin",
+        brownSkin: "Brown skin",
+        darkSkin: "Dark skin",
+        occupation: "Occupation / Role",
+        idol: "Idol",
+        assassin: "Assassin",
+        student: "Student",
+        officeLady: "Office lady",
+        teacher: "Teacher",
+        detective: "Detective",
+        doctor: "Doctor",
+        nurse: "Nurse",
+        soldier: "Soldier",
+        princess: "Princess",
+        queen: "Queen",
+        witch: "Witch",
+        customOccupation: "Custom Occupation / Role",
 
         hair: "Hair",
         hairLength: "Hair Length",
@@ -295,6 +387,52 @@ const translations = {
         french: "仏",
         black: "黒人",
 
+        nationalitySection: "国籍",
+        ethnicitySection: "エスニシティ",
+        chineseNationality: "中国",
+        japaneseNationality: "日本",
+        americanNationality: "アメリカ",
+        britishNationality: "イギリス",
+        frenchNationality: "フランス",
+        koreanNationality: "韓国",
+        germanNationality: "ドイツ",
+        russianNationality: "ロシア",
+        customNationality: "カスタム国籍",
+        eastAsianEthnicity: "東アジア",
+        hanChineseEthnicity: "漢民族",
+        japaneseEthnicity: "日本系",
+        koreanEthnicity: "韓国系",
+        whiteEuropeanEthnicity: "白人/ヨーロッパ系",
+        blackAfricanEthnicity: "黒人/アフリカ系",
+        latinaEthnicity: "ラテン系",
+        middleEasternEthnicity: "中東系",
+        southAsianEthnicity: "南アジア系",
+        southeastAsianEthnicity: "東南アジア系",
+        customEthnicity: "カスタム・エスニシティ",
+        skinTone: "肌の色",
+        porcelainSkin: "陶器のような白肌",
+        fairSkin: "色白",
+        lightSkin: "明るい肌",
+        mediumSkin: "中間的な肌色",
+        oliveSkin: "オリーブ肌",
+        tanSkin: "日焼け肌",
+        brownSkin: "褐色肌",
+        darkSkin: "濃い肌色",
+        occupation: "職業 / 役割",
+        idol: "アイドル",
+        assassin: "暗殺者",
+        student: "学生",
+        officeLady: "OL",
+        teacher: "教師",
+        detective: "探偵",
+        doctor: "医師",
+        nurse: "看護師",
+        soldier: "軍人",
+        princess: "姫",
+        queen: "女王",
+        witch: "魔女",
+        customOccupation: "カスタム職業 / 役割",
+
         hair: "髪",
         hairLength: "髪の長さ",
         hairColor: "髪色",
@@ -432,22 +570,45 @@ function getCheckedValues(className){
         .map(item => item.value);
 }
 
-function limitNationalitySelection(changedItem){
-    const selected = document.querySelectorAll(".nationality:checked");
+function limitSelection(changedItem, className, maxCount){
+    const selected = document.querySelectorAll("." + className + ":checked");
 
-    if(selected.length > 2){
+    if(selected.length > maxCount){
         changedItem.checked = false;
     }
 }
 
-function getNationalityPrompt(){
-    const selected = getCheckedValues("nationality");
+function getCommaListFromInput(id){
+    return getValue(id)
+        .split(",")
+        .map(item => item.trim())
+        .filter(item => item !== "");
+}
 
-    if(selected.length === 2){
-        return "mixed race, " + selected.join(" and ");
+function getOriginPrompt(){
+    const nationalities = [
+        ...getCheckedValues("nationality"),
+        ...getCommaListFromInput("customNationality")
+    ];
+
+    const ethnicities = [
+        ...getCheckedValues("ethnicity"),
+        ...getCommaListFromInput("customEthnicity")
+    ];
+
+    const parts = [];
+
+    if(nationalities.length > 0){
+        parts.push(nationalities.join(" and "));
     }
 
-    return selected[0] || "";
+    if(ethnicities.length === 1){
+        parts.push(ethnicities[0]);
+    }else if(ethnicities.length > 1){
+        parts.push("mixed ethnicity, " + ethnicities.join(" and "));
+    }
+
+    return parts.join(", ");
 }
 
 function updateRangeValue(id){
@@ -474,16 +635,26 @@ function toggleClothes(){
 }
 
 function getCharacterData(){
-    const customPersonality = getValue("customPersonality")
-        .split(",")
-        .map(item => item.trim())
-        .filter(item => item !== "");
+    const customPersonality = getCommaListFromInput("customPersonality");
+    const customOccupation = getCommaListFromInput("customOccupation");
 
     return {
         name: getValue("name"),
         age: getValue("age"),
         gender: getValue("gender"),
-        nationality: getCheckedValues("nationality"),
+        nationality: [
+            ...getCheckedValues("nationality"),
+            ...getCommaListFromInput("customNationality")
+        ],
+        ethnicity: [
+            ...getCheckedValues("ethnicity"),
+            ...getCommaListFromInput("customEthnicity")
+        ],
+        skinTone: getValue("skinTone"),
+        occupation: [
+            getValue("occupation"),
+            ...customOccupation
+        ].filter(item => item !== ""),
 
         body: {
             heightCm: getValue("height"),
@@ -531,7 +702,9 @@ function generatePrompt(){
         data.name,
         data.age ? data.age + " years old" : "",
         data.gender,
-        getNationalityPrompt(),
+        getOriginPrompt(),
+        data.skinTone,
+        ...data.occupation,
 
         data.body.heightCm ? data.body.heightCm + " cm tall" : "",
         data.body.weightKg ? data.body.weightKg + " kg" : "",
