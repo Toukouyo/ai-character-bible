@@ -1,705 +1,1072 @@
-const translations = {
-    zh: {
-        appTitle: "角色生成器",
-        interfaceLanguage: "界面语言",
-        basicInfo: "基本信息",
-        name: "角色名称",
-        age: "年龄",
-        gender: "性别",
-        male: "男",
-        female: "女",
-        ladyboy: "Ladyboy",
-        height: "身高",
-        weight: "体重",
-        nationalityStatus: "国籍 / 族裔",
-        chinese: "中",
-        british: "英",
-        american: "美",
-        japanese: "日",
-        french: "法",
-        black: "黑人",
-
-        nationalitySection: "国籍",
-        ethnicitySection: "族裔",
-        chineseNationality: "中国",
-        japaneseNationality: "日本",
-        americanNationality: "美国",
-        britishNationality: "英国",
-        frenchNationality: "法国",
-        koreanNationality: "韩国",
-        germanNationality: "德国",
-        russianNationality: "俄罗斯",
-        customNationality: "自定义国籍",
-        eastAsianEthnicity: "东亚",
-        hanChineseEthnicity: "汉族",
-        japaneseEthnicity: "日本族裔",
-        koreanEthnicity: "韩族",
-        whiteEuropeanEthnicity: "白人/欧洲",
-        blackAfricanEthnicity: "黑人/非洲",
-        latinaEthnicity: "拉丁裔",
-        middleEasternEthnicity: "中东",
-        southAsianEthnicity: "南亚",
-        southeastAsianEthnicity: "东南亚",
-        customEthnicity: "自定义族裔",
-        skinTone: "肤色",
-        porcelainSkin: "瓷白",
-        fairSkin: "白皙",
-        lightSkin: "浅肤色",
-        mediumSkin: "中等肤色",
-        oliveSkin: "橄榄肤色",
-        tanSkin: "小麦/古铜",
-        brownSkin: "棕色皮肤",
-        darkSkin: "深色皮肤",
-        occupation: "职业 / 身份",
-        idol: "偶像",
-        assassin: "杀手",
-        student: "学生",
-        officeLady: "OL",
-        teacher: "教师",
-        detective: "侦探",
-        doctor: "医生",
-        nurse: "护士",
-        soldier: "军人",
-        princess: "公主",
-        queen: "女王",
-        witch: "女巫",
-        customOccupation: "自定义职业 / 身份",
-
-        hair: "头发",
-        hairLength: "发型长度",
-        hairColor: "发色",
-        hairTexture: "发质 / 发型状态",
-        notSelected: "未选择",
-        none: "无",
-        shortHair: "短发",
-        mediumHair: "中长发",
-        longHair: "长发",
-        veryLongHair: "超长发",
-        bobCut: "波波头",
-        ponytail: "马尾",
-        twinTails: "双马尾",
-        buzzCut: "寸头",
-        blackHair: "黑发",
-        brownHair: "棕发",
-        blondeHair: "金发",
-        silverHair: "银发",
-        whiteHair: "白发",
-        redHair: "红发",
-        blueHair: "蓝发",
-        pinkHair: "粉发",
-        straightHair: "直发",
-        wavyHair: "波浪发",
-        curlyHair: "卷发",
-        messyHair: "凌乱发",
-        smoothHair: "顺滑发",
-
-        bodyShape: "身材",
-        bodyTypeLabel: "体型标签",
-        bodyTypeSlender: "纤细",
-        bodyTypeSlim: "苗条",
-        bodyTypeCurvy: "丰满",
-        bodyTypeAthletic: "运动员型",
-        bodyTypeHourglass: "沙漏型",
-        bodyTypePetite: "娇小",
-        bodyTypeTallLean: "修长",
-        bodyTypeModel: "模特",
-        bust: "胸围",
-        waist: "腰围",
-        hips: "臀围",
-
-        faceAndAccessories: "面部与装饰",
-        face: "面部特征",
-        expression: "常用表情",
-        neutralExpression: "平静",
-        gentleSmile: "温柔微笑",
-        confidentSmile: "自信微笑",
-        seriousExpression: "严肃",
-        melancholicExpression: "忧郁",
-        angryExpression: "生气",
-        shyExpression: "害羞",
-        mysteriousSmile: "神秘微笑",
-        hat: "帽子",
-        bandana: "头巾",
-        baseballCap: "棒球帽",
-        beret: "贝雷帽",
-        beanie: "针织帽",
-        wideBrimHat: "宽檐帽",
-        neck: "颈部装饰",
-        necklace: "项链",
-        choker: "项圈",
-        scarf: "围巾",
-        silkScarf: "丝巾",
-
-        piercingStatus: "穿孔情况",
-        noseRing: "鼻环",
-        earrings: "耳环",
-        tonguePiercing: "舌环",
-        navelPiercing: "肚脐环",
-        nipplePiercing: "乳环",
-        intimatePiercing: "私密穿孔",
-
-        clothing: "服装",
-        onesuit: "连体衣",
-        dress: "连衣裙",
-        bikini: "比基尼",
-        onePieceSwimsuit: "连体泳衣",
-        jumpsuit: "连体裤",
-        top: "上衣",
-        tShirt: "T恤",
-        shirt: "衬衫",
-        hoodie: "卫衣",
-        sweater: "毛衣",
-        jacket: "夹克",
-        tankTop: "背心",
-        bottom: "下衣",
-        jeans: "牛仔裤",
-        shorts: "短裤",
-        skirt: "裙子",
-        cargoPants: "工装裤",
-        pleatedSkirt: "百褶裙",
-
-        limbsAndShoes: "四肢与鞋",
-        hand: "手部",
-        gloves: "手套",
-        fingerlessGloves: "露指手套",
-        leg: "腿部",
-        kneeSocks: "及膝袜",
-        thighHighs: "过膝袜",
-        pantyhose: "连裤袜",
-        stockings: "长筒袜",
-        shoes: "鞋子",
-        loafers: "乐福鞋",
-        boots: "靴子",
-        balletFlats: "芭蕾平底鞋",
-        sneakers: "运动鞋",
-        barefoot: "赤脚",
-
-        personalityTags: "性格标签",
-        calm: "冷静",
-        gentle: "温柔",
-        cheerful: "开朗",
-        introverted: "内向",
-        mysterious: "神秘",
-        rebellious: "叛逆",
-        analytical: "理性",
-        elegant: "优雅",
-        customPersonality: "自定义性格标签",
-
-        generatePrompt: "生成Prompt",
-        copyPrompt: "复制Prompt",
-        saveJSON: "保存角色为JSON",
-        alertGenerateFirst: "请先生成Prompt",
-        alertCopied: "已复制"
+// UI_LABELS stores only interface text: section titles, field labels, buttons, and alerts.
+// Selectable character attributes live in OPTION_LABELS below, so adding a new tag only requires editing one object.
+const UI_LABELS = {
+    "appTitle": {
+        "en": "Character Generator",
+        "zh": "角色生成器",
+        "ja": "キャラクター生成器"
     },
-
-    en: {
-        appTitle: "Character Generator",
-        interfaceLanguage: "Interface Language",
-        basicInfo: "Basic Info",
-        name: "Character Name",
-        age: "Age",
-        gender: "Gender",
-        male: "Male",
-        female: "Female",
-        ladyboy: "Ladyboy",
-        height: "Height",
-        weight: "Weight",
-        nationalityStatus: "Nationality / Ethnicity",
-        chinese: "Chinese",
-        british: "British",
-        american: "American",
-        japanese: "Japanese",
-        french: "French",
-        black: "Black",
-
-        nationalitySection: "Nationality",
-        ethnicitySection: "Ethnicity",
-        chineseNationality: "China",
-        japaneseNationality: "Japan",
-        americanNationality: "United States",
-        britishNationality: "United Kingdom",
-        frenchNationality: "France",
-        koreanNationality: "Korea",
-        germanNationality: "Germany",
-        russianNationality: "Russia",
-        customNationality: "Custom Nationality",
-        eastAsianEthnicity: "East Asian",
-        hanChineseEthnicity: "Han Chinese",
-        japaneseEthnicity: "Japanese",
-        koreanEthnicity: "Korean",
-        whiteEuropeanEthnicity: "White / European",
-        blackAfricanEthnicity: "Black / African",
-        latinaEthnicity: "Latina",
-        middleEasternEthnicity: "Middle Eastern",
-        southAsianEthnicity: "South Asian",
-        southeastAsianEthnicity: "Southeast Asian",
-        customEthnicity: "Custom Ethnicity",
-        skinTone: "Skin Tone",
-        porcelainSkin: "Porcelain skin",
-        fairSkin: "Fair skin",
-        lightSkin: "Light skin",
-        mediumSkin: "Medium skin",
-        oliveSkin: "Olive skin",
-        tanSkin: "Tan skin",
-        brownSkin: "Brown skin",
-        darkSkin: "Dark skin",
-        occupation: "Occupation / Role",
-        idol: "Idol",
-        assassin: "Assassin",
-        student: "Student",
-        officeLady: "Office lady",
-        teacher: "Teacher",
-        detective: "Detective",
-        doctor: "Doctor",
-        nurse: "Nurse",
-        soldier: "Soldier",
-        princess: "Princess",
-        queen: "Queen",
-        witch: "Witch",
-        customOccupation: "Custom Occupation / Role",
-
-        hair: "Hair",
-        hairLength: "Hair Length",
-        hairColor: "Hair Color",
-        hairTexture: "Hair Texture / Style",
-        notSelected: "Not selected",
-        none: "None",
-        shortHair: "Short hair",
-        mediumHair: "Medium-length hair",
-        longHair: "Long hair",
-        veryLongHair: "Very long hair",
-        bobCut: "Bob cut",
-        ponytail: "Ponytail",
-        twinTails: "Twin tails",
-        buzzCut: "Buzz cut",
-        blackHair: "Black hair",
-        brownHair: "Brown hair",
-        blondeHair: "Blonde hair",
-        silverHair: "Silver hair",
-        whiteHair: "White hair",
-        redHair: "Red hair",
-        blueHair: "Blue hair",
-        pinkHair: "Pink hair",
-        straightHair: "Straight hair",
-        wavyHair: "Wavy hair",
-        curlyHair: "Curly hair",
-        messyHair: "Messy hair",
-        smoothHair: "Smooth hair",
-
-        bodyShape: "Body",
-        bodyTypeLabel: "Body Type",
-        bust: "Bust",
-        waist: "Waist",
-        hips: "Hips",
-
-        faceAndAccessories: "Face & Accessories",
-        face: "Facial Features",
-        expression: "Expression",
-        neutralExpression: "Neutral",
-        gentleSmile: "Gentle smile",
-        confidentSmile: "Confident smile",
-        seriousExpression: "Serious",
-        melancholicExpression: "Melancholic",
-        angryExpression: "Angry",
-        shyExpression: "Shy",
-        mysteriousSmile: "Mysterious smile",
-        hat: "Hat",
-        bandana: "Bandana",
-        baseballCap: "Baseball cap",
-        beret: "Beret",
-        beanie: "Beanie",
-        wideBrimHat: "Wide-brim hat",
-        neck: "Neck Accessory",
-        necklace: "Necklace",
-        choker: "Choker",
-        scarf: "Scarf",
-        silkScarf: "Silk scarf",
-
-        piercingStatus: "Piercings",
-        noseRing: "Nose ring",
-        earrings: "Earrings",
-        tonguePiercing: "Tongue piercing",
-        navelPiercing: "Navel piercing",
-        nipplePiercing: "Nipple piercing",
-        intimatePiercing: "Intimate piercing",
-
-        clothing: "Clothing",
-        onesuit: "One-piece Outfit",
-        dress: "Dress",
-        bikini: "Bikini",
-        onePieceSwimsuit: "One-piece swimsuit",
-        jumpsuit: "Jumpsuit",
-        top: "Top",
-        tShirt: "T-shirt",
-        shirt: "Shirt",
-        hoodie: "Hoodie",
-        sweater: "Sweater",
-        jacket: "Jacket",
-        tankTop: "Tank top",
-        bottom: "Bottom",
-        jeans: "Jeans",
-        shorts: "Shorts",
-        skirt: "Skirt",
-        cargoPants: "Cargo pants",
-        pleatedSkirt: "Pleated skirt",
-
-        limbsAndShoes: "Limbs & Shoes",
-        hand: "Hands",
-        gloves: "Gloves",
-        fingerlessGloves: "Fingerless gloves",
-        leg: "Legs",
-        kneeSocks: "Knee socks",
-        thighHighs: "Thigh highs",
-        pantyhose: "Pantyhose",
-        stockings: "Stockings",
-        shoes: "Shoes",
-        loafers: "Loafers",
-        boots: "Boots",
-        balletFlats: "Ballet flats",
-        sneakers: "Sneakers",
-        barefoot: "Barefoot",
-
-        personalityTags: "Personality Tags",
-        calm: "Calm",
-        gentle: "Gentle",
-        cheerful: "Cheerful",
-        introverted: "Introverted",
-        mysterious: "Mysterious",
-        rebellious: "Rebellious",
-        analytical: "Analytical",
-        elegant: "Elegant",
-        customPersonality: "Custom Personality Tags",
-
-        generatePrompt: "Generate Prompt",
-        copyPrompt: "Copy Prompt",
-        saveJSON: "Save as JSON",
-        alertGenerateFirst: "Please generate a prompt first",
-        alertCopied: "Copied"
+    "interfaceLanguage": {
+        "en": "Interface Language",
+        "zh": "界面语言",
+        "ja": "表示言語"
     },
-
-    ja: {
-        appTitle: "キャラクター生成器",
-        interfaceLanguage: "表示言語",
-        basicInfo: "基本情報",
-        name: "キャラクター名",
-        age: "年齢",
-        gender: "性別",
-        male: "男性",
-        female: "女性",
-        ladyboy: "Ladyboy",
-        height: "身長",
-        weight: "体重",
-        nationalityStatus: "国籍 / エスニシティ",
-        chinese: "中",
-        british: "英",
-        american: "米",
-        japanese: "日",
-        french: "仏",
-        black: "黒人",
-
-        nationalitySection: "国籍",
-        ethnicitySection: "エスニシティ",
-        chineseNationality: "中国",
-        japaneseNationality: "日本",
-        americanNationality: "アメリカ",
-        britishNationality: "イギリス",
-        frenchNationality: "フランス",
-        koreanNationality: "韓国",
-        germanNationality: "ドイツ",
-        russianNationality: "ロシア",
-        customNationality: "カスタム国籍",
-        eastAsianEthnicity: "東アジア",
-        hanChineseEthnicity: "漢民族",
-        japaneseEthnicity: "日本系",
-        koreanEthnicity: "韓国系",
-        whiteEuropeanEthnicity: "白人/ヨーロッパ系",
-        blackAfricanEthnicity: "黒人/アフリカ系",
-        latinaEthnicity: "ラテン系",
-        middleEasternEthnicity: "中東系",
-        southAsianEthnicity: "南アジア系",
-        southeastAsianEthnicity: "東南アジア系",
-        customEthnicity: "カスタム・エスニシティ",
-        skinTone: "肌の色",
-        porcelainSkin: "陶器のような白肌",
-        fairSkin: "色白",
-        lightSkin: "明るい肌",
-        mediumSkin: "中間的な肌色",
-        oliveSkin: "オリーブ肌",
-        tanSkin: "日焼け肌",
-        brownSkin: "褐色肌",
-        darkSkin: "濃い肌色",
-        occupation: "職業 / 役割",
-        idol: "アイドル",
-        assassin: "暗殺者",
-        student: "学生",
-        officeLady: "OL",
-        teacher: "教師",
-        detective: "探偵",
-        doctor: "医師",
-        nurse: "看護師",
-        soldier: "軍人",
-        princess: "姫",
-        queen: "女王",
-        witch: "魔女",
-        customOccupation: "カスタム職業 / 役割",
-
-        hair: "髪",
-        hairLength: "髪の長さ",
-        hairColor: "髪色",
-        hairTexture: "髪質 / 髪型の状態",
-        notSelected: "未選択",
-        none: "なし",
-        shortHair: "ショートヘア",
-        mediumHair: "ミディアムヘア",
-        longHair: "ロングヘア",
-        veryLongHair: "超ロングヘア",
-        bobCut: "ボブカット",
-        ponytail: "ポニーテール",
-        twinTails: "ツインテール",
-        buzzCut: "丸刈り",
-        blackHair: "黒髪",
-        brownHair: "茶髪",
-        blondeHair: "金髪",
-        silverHair: "銀髪",
-        whiteHair: "白髪",
-        redHair: "赤髪",
-        blueHair: "青髪",
-        pinkHair: "ピンク髪",
-        straightHair: "ストレートヘア",
-        wavyHair: "ウェーブヘア",
-        curlyHair: "カールヘア",
-        messyHair: "乱れ髪",
-        smoothHair: "なめらかな髪",
-
-        bodyShape: "スタイル",
-        bodyTypeLabel: "体型",
-        bust: "バスト",
-        waist: "ウエスト",
-        hips: "ヒップ",
-
-        faceAndAccessories: "顔と装飾",
-        face: "顔の特徴",
-        expression: "表情",
-        neutralExpression: "無表情",
-        gentleSmile: "優しい笑顔",
-        confidentSmile: "自信のある笑み",
-        seriousExpression: "真剣な表情",
-        melancholicExpression: "憂鬱な表情",
-        angryExpression: "怒った表情",
-        shyExpression: "恥ずかしそうな表情",
-        mysteriousSmile: "謎めいた笑み",
-        hat: "帽子",
-        bandana: "バンダナ",
-        baseballCap: "野球帽",
-        beret: "ベレー帽",
-        beanie: "ニット帽",
-        wideBrimHat: "つば広帽",
-        neck: "首元の装飾",
-        necklace: "ネックレス",
-        choker: "チョーカー",
-        scarf: "マフラー",
-        silkScarf: "シルクスカーフ",
-
-        piercingStatus: "ピアス",
-        noseRing: "鼻ピアス",
-        earrings: "イヤリング",
-        tonguePiercing: "舌ピアス",
-        navelPiercing: "へそピアス",
-        nipplePiercing: "乳首ピアス",
-        intimatePiercing: "インティメイトピアス",
-
-        clothing: "服装",
-        onesuit: "ワンピース系",
-        dress: "ワンピース",
-        bikini: "ビキニ",
-        onePieceSwimsuit: "ワンピース水着",
-        jumpsuit: "ジャンプスーツ",
-        top: "上着",
-        tShirt: "Tシャツ",
-        shirt: "シャツ",
-        hoodie: "パーカー",
-        sweater: "セーター",
-        jacket: "ジャケット",
-        tankTop: "タンクトップ",
-        bottom: "下衣",
-        jeans: "ジーンズ",
-        shorts: "ショートパンツ",
-        skirt: "スカート",
-        cargoPants: "カーゴパンツ",
-        pleatedSkirt: "プリーツスカート",
-
-        limbsAndShoes: "手足と靴",
-        hand: "手",
-        gloves: "手袋",
-        fingerlessGloves: "指なし手袋",
-        leg: "脚",
-        kneeSocks: "ニーソックス",
-        thighHighs: "サイハイソックス",
-        pantyhose: "パンスト",
-        stockings: "ストッキング",
-        shoes: "靴",
-        loafers: "ローファー",
-        boots: "ブーツ",
-        balletFlats: "バレエシューズ",
-        sneakers: "スニーカー",
-        barefoot: "裸足",
-
-        personalityTags: "性格タグ",
-        calm: "冷静",
-        gentle: "優しい",
-        cheerful: "明るい",
-        introverted: "内向的",
-        mysterious: "神秘的",
-        rebellious: "反抗的",
-        analytical: "理性的",
-        elegant: "優雅",
-        customPersonality: "カスタム性格タグ",
-
-        generatePrompt: "Promptを生成",
-        copyPrompt: "Promptをコピー",
-        saveJSON: "JSONとして保存",
-        alertGenerateFirst: "先にPromptを生成してください",
-        alertCopied: "コピーしました"
+    "basicInfo": {
+        "en": "Basic Info",
+        "zh": "基本信息",
+        "ja": "基本情報"
+    },
+    "name": {
+        "en": "Character Name",
+        "zh": "角色名称",
+        "ja": "キャラクター名"
+    },
+    "age": {
+        "en": "Age",
+        "zh": "年龄",
+        "ja": "年齢"
+    },
+    "gender": {
+        "en": "Gender",
+        "zh": "性别",
+        "ja": "性別"
+    },
+    "height": {
+        "en": "Height",
+        "zh": "身高",
+        "ja": "身長"
+    },
+    "weight": {
+        "en": "Weight",
+        "zh": "体重",
+        "ja": "体重"
+    },
+    "nationalityStatus": {
+        "en": "Nationality / Ethnicity",
+        "zh": "国籍 / 族裔",
+        "ja": "国籍 / エスニシティ"
+    },
+    "chinese": {
+        "en": "Chinese",
+        "zh": "中",
+        "ja": "中"
+    },
+    "british": {
+        "en": "British",
+        "zh": "英",
+        "ja": "英"
+    },
+    "american": {
+        "en": "American",
+        "zh": "美",
+        "ja": "米"
+    },
+    "japanese": {
+        "en": "Japanese",
+        "zh": "日",
+        "ja": "日"
+    },
+    "french": {
+        "en": "French",
+        "zh": "法",
+        "ja": "仏"
+    },
+    "black": {
+        "en": "Black",
+        "zh": "黑人",
+        "ja": "黒人"
+    },
+    "nationalitySection": {
+        "en": "Nationality",
+        "zh": "国籍",
+        "ja": "国籍"
+    },
+    "ethnicitySection": {
+        "en": "Ethnicity",
+        "zh": "族裔",
+        "ja": "エスニシティ"
+    },
+    "customNationality": {
+        "en": "Custom Nationality",
+        "zh": "自定义国籍",
+        "ja": "カスタム国籍"
+    },
+    "customEthnicity": {
+        "en": "Custom Ethnicity",
+        "zh": "自定义族裔",
+        "ja": "カスタム・エスニシティ"
+    },
+    "skinTone": {
+        "en": "Skin Tone",
+        "zh": "肤色",
+        "ja": "肌の色"
+    },
+    "occupation": {
+        "en": "Occupation / Role",
+        "zh": "职业 / 身份",
+        "ja": "職業 / 役割"
+    },
+    "customOccupation": {
+        "en": "Custom Occupation / Role",
+        "zh": "自定义职业 / 身份",
+        "ja": "カスタム職業 / 役割"
+    },
+    "hair": {
+        "en": "Hair",
+        "zh": "头发",
+        "ja": "髪"
+    },
+    "hairLength": {
+        "en": "Hair Length",
+        "zh": "发型长度",
+        "ja": "髪の長さ"
+    },
+    "hairColor": {
+        "en": "Hair Color",
+        "zh": "发色",
+        "ja": "髪色"
+    },
+    "hairTexture": {
+        "en": "Hair Texture / Style",
+        "zh": "发质 / 发型状态",
+        "ja": "髪質 / 髪型の状態"
+    },
+    "notSelected": {
+        "en": "Not selected",
+        "zh": "未选择",
+        "ja": "未選択"
+    },
+    "none": {
+        "en": "None",
+        "zh": "无",
+        "ja": "なし"
+    },
+    "bodyShape": {
+        "en": "Body",
+        "zh": "身材",
+        "ja": "スタイル"
+    },
+    "bodyTypeLabel": {
+        "en": "Body Type",
+        "zh": "体型标签",
+        "ja": "体型"
+    },
+    "bust": {
+        "en": "Bust",
+        "zh": "胸围",
+        "ja": "バスト"
+    },
+    "waist": {
+        "en": "Waist",
+        "zh": "腰围",
+        "ja": "ウエスト"
+    },
+    "hips": {
+        "en": "Hips",
+        "zh": "臀围",
+        "ja": "ヒップ"
+    },
+    "faceAndAccessories": {
+        "en": "Face & Accessories",
+        "zh": "面部与装饰",
+        "ja": "顔と装飾"
+    },
+    "face": {
+        "en": "Facial Features",
+        "zh": "面部特征",
+        "ja": "顔の特徴"
+    },
+    "expression": {
+        "en": "Expression",
+        "zh": "常用表情",
+        "ja": "表情"
+    },
+    "hat": {
+        "en": "Hat",
+        "zh": "帽子",
+        "ja": "帽子"
+    },
+    "neck": {
+        "en": "Neck Accessory",
+        "zh": "颈部装饰",
+        "ja": "首元の装飾"
+    },
+    "piercingStatus": {
+        "en": "Piercings",
+        "zh": "穿孔情况",
+        "ja": "ピアス"
+    },
+    "clothing": {
+        "en": "Clothing",
+        "zh": "服装",
+        "ja": "服装"
+    },
+    "onesuit": {
+        "en": "One-piece Outfit",
+        "zh": "连体衣",
+        "ja": "ワンピース系"
+    },
+    "top": {
+        "en": "Top",
+        "zh": "上衣",
+        "ja": "上着"
+    },
+    "bottom": {
+        "en": "Bottom",
+        "zh": "下衣",
+        "ja": "下衣"
+    },
+    "limbsAndShoes": {
+        "en": "Limbs & Shoes",
+        "zh": "四肢与鞋",
+        "ja": "手足と靴"
+    },
+    "hand": {
+        "en": "Hands",
+        "zh": "手部",
+        "ja": "手"
+    },
+    "leg": {
+        "en": "Legs",
+        "zh": "腿部",
+        "ja": "脚"
+    },
+    "shoes": {
+        "en": "Shoes",
+        "zh": "鞋子",
+        "ja": "靴"
+    },
+    "personalityTags": {
+        "en": "Personality Tags",
+        "zh": "性格标签",
+        "ja": "性格タグ"
+    },
+    "customPersonality": {
+        "en": "Custom Personality Tags",
+        "zh": "自定义性格标签",
+        "ja": "カスタム性格タグ"
+    },
+    "generatePrompt": {
+        "en": "Generate Prompt",
+        "zh": "生成Prompt",
+        "ja": "Promptを生成"
+    },
+    "copyPrompt": {
+        "en": "Copy Prompt",
+        "zh": "复制Prompt",
+        "ja": "Promptをコピー"
+    },
+    "saveJSON": {
+        "en": "Save as JSON",
+        "zh": "保存角色为JSON",
+        "ja": "JSONとして保存"
+    },
+    "alertGenerateFirst": {
+        "en": "Please generate a prompt first",
+        "zh": "请先生成Prompt",
+        "ja": "先にPromptを生成してください"
+    },
+    "alertCopied": {
+        "en": "Copied",
+        "zh": "已复制",
+        "ja": "コピーしました"
     }
 };
 
-const OPTION_LABELS = {
-    americanNationality: { value: "American nationality", en: "American nationality", zh: "\u7f8e\u56fd", ja: "\u30a2\u30e1\u30ea\u30ab" },
-    analytical: { value: "analytical", en: "analytical", zh: "\u7406\u6027", ja: "\u7406\u6027\u7684" },
-    angryExpression: { value: "angry expression", en: "angry expression", zh: "\u751f\u6c14", ja: "\u6012\u3063\u305f\u8868\u60c5" },
-    assassin: { value: "assassin", en: "assassin", zh: "\u6740\u624b", ja: "\u6697\u6bba\u8005" },
-    balletFlats: { value: "ballet flats", en: "ballet flats", zh: "\u82ad\u857e\u5e73\u5e95\u978b", ja: "\u30d0\u30ec\u30a8\u30b7\u30e5\u30fc\u30ba" },
-    bandana: { value: "bandana", en: "bandana", zh: "\u5934\u5dfe", ja: "\u30d0\u30f3\u30c0\u30ca" },
-    barefoot: { value: "barefoot", en: "barefoot", zh: "\u8d64\u811a", ja: "\u88f8\u8db3" },
-    baseballCap: { value: "baseball cap", en: "baseball cap", zh: "\u68d2\u7403\u5e3d", ja: "\u91ce\u7403\u5e3d" },
-    beanie: { value: "beanie", en: "beanie", zh: "\u9488\u7ec7\u5e3d", ja: "\u30cb\u30c3\u30c8\u5e3d" },
-    beret: { value: "beret", en: "beret", zh: "\u8d1d\u96f7\u5e3d", ja: "\u30d9\u30ec\u30fc\u5e3d" },
-    bikini: { value: "bikini", en: "bikini", zh: "\u6bd4\u57fa\u5c3c", ja: "\u30d3\u30ad\u30cb" },
-    blackAfricanEthnicity: { value: "Black African ethnicity", en: "Black African ethnicity", zh: "\u9ed1\u4eba/\u975e\u6d32", ja: "\u9ed2\u4eba/\u30a2\u30d5\u30ea\u30ab\u7cfb" },
-    blackHair: { value: "black hair", en: "black hair", zh: "\u9ed1\u53d1", ja: "\u9ed2\u9aea" },
-    blondeHair: { value: "blonde hair", en: "blonde hair", zh: "\u91d1\u53d1", ja: "\u91d1\u9aea" },
-    blueHair: { value: "blue hair", en: "blue hair", zh: "\u84dd\u53d1", ja: "\u9752\u9aea" },
-    bobCut: { value: "bob cut", en: "bob cut", zh: "\u6ce2\u6ce2\u5934", ja: "\u30dc\u30d6\u30ab\u30c3\u30c8" },
-    bodyTypeAthletic: { value: "Athletic", en: "Athletic", zh: "\u8fd0\u52a8\u5458\u578b", ja: "\u30a2\u30b9\u30ea\u30fc\u30c8\u4f53\u578b" },
-    bodyTypeCurvy: { value: "Curvy", en: "Curvy", zh: "\u4e30\u6ee1", ja: "\u3075\u304f\u3088\u304b" },
-    bodyTypeHourglass: { value: "Hourglass", en: "Hourglass", zh: "\u6c99\u6f0f\u578b", ja: "\u7802\u6642\u8a08\u578b" },
-    bodyTypeModel: { value: "Model-like", en: "Model-like", zh: "\u6a21\u7279", ja: "\u30e2\u30c7\u30eb\u4f53\u578b" },
-    bodyTypePetite: { value: "Petite", en: "Petite", zh: "\u5a07\u5c0f", ja: "\u5c0f\u67c4" },
-    bodyTypeSlender: { value: "Slender", en: "Slender", zh: "\u7ea4\u7ec6", ja: "\u7d30\u8eab" },
-    bodyTypeSlim: { value: "Slim", en: "Slim", zh: "\u82d7\u6761", ja: "\u30b9\u30ea\u30e0" },
-    bodyTypeTallLean: { value: "Tall and lean", en: "Tall and lean", zh: "\u4fee\u957f", ja: "\u80cc\u304c\u9ad8\u304f\u7d30\u8eab" },
-    boots: { value: "boots", en: "boots", zh: "\u9774\u5b50", ja: "\u30d6\u30fc\u30c4" },
-    britishNationality: { value: "British nationality", en: "British nationality", zh: "\u82f1\u56fd", ja: "\u30a4\u30ae\u30ea\u30b9" },
-    brownHair: { value: "brown hair", en: "brown hair", zh: "\u68d5\u53d1", ja: "\u8336\u9aea" },
-    brownSkin: { value: "brown skin", en: "brown skin", zh: "\u68d5\u8272\u76ae\u80a4", ja: "\u8910\u8272\u808c" },
-    buzzCut: { value: "buzz cut", en: "buzz cut", zh: "\u5bf8\u5934", ja: "\u4e38\u5208\u308a" },
-    calm: { value: "calm", en: "calm", zh: "\u51b7\u9759", ja: "\u51b7\u9759" },
-    cargoPants: { value: "cargo pants", en: "cargo pants", zh: "\u5de5\u88c5\u88e4", ja: "\u30ab\u30fc\u30b4\u30d1\u30f3\u30c4" },
-    cheerful: { value: "cheerful", en: "cheerful", zh: "\u5f00\u6717", ja: "\u660e\u308b\u3044" },
-    chineseNationality: { value: "Chinese nationality", en: "Chinese nationality", zh: "\u4e2d\u56fd", ja: "\u4e2d\u56fd" },
-    choker: { value: "choker", en: "choker", zh: "\u9879\u5708", ja: "\u30c1\u30e7\u30fc\u30ab\u30fc" },
-    confidentSmile: { value: "confident smile", en: "confident smile", zh: "\u81ea\u4fe1\u5fae\u7b11", ja: "\u81ea\u4fe1\u306e\u3042\u308b\u7b11\u307f" },
-    curlyHair: { value: "curly hair", en: "curly hair", zh: "\u5377\u53d1", ja: "\u30ab\u30fc\u30eb\u30d8\u30a2" },
-    darkSkin: { value: "dark skin", en: "dark skin", zh: "\u6df1\u8272\u76ae\u80a4", ja: "\u6fc3\u3044\u808c\u8272" },
-    detective: { value: "detective", en: "detective", zh: "\u4fa6\u63a2", ja: "\u63a2\u5075" },
-    doctor: { value: "doctor", en: "doctor", zh: "\u533b\u751f", ja: "\u533b\u5e2b" },
-    dress: { value: "dress", en: "dress", zh: "\u8fde\u8863\u88d9", ja: "\u30ef\u30f3\u30d4\u30fc\u30b9" },
-    earrings: { value: "earrings", en: "earrings", zh: "\u8033\u73af", ja: "\u30a4\u30e4\u30ea\u30f3\u30b0" },
-    eastAsianEthnicity: { value: "East Asian ethnicity", en: "East Asian ethnicity", zh: "\u4e1c\u4e9a", ja: "\u6771\u30a2\u30b8\u30a2" },
-    elegant: { value: "elegant", en: "elegant", zh: "\u4f18\u96c5", ja: "\u512a\u96c5" },
-    fairSkin: { value: "fair skin", en: "fair skin", zh: "\u767d\u7699", ja: "\u8272\u767d" },
-    female: { value: "female", en: "female", zh: "\u5973", ja: "\u5973\u6027" },
-    fingerlessGloves: { value: "fingerless gloves", en: "fingerless gloves", zh: "\u9732\u6307\u624b\u5957", ja: "\u6307\u306a\u3057\u624b\u888b" },
-    frenchNationality: { value: "French nationality", en: "French nationality", zh: "\u6cd5\u56fd", ja: "\u30d5\u30e9\u30f3\u30b9" },
-    gentle: { value: "gentle", en: "gentle", zh: "\u6e29\u67d4", ja: "\u512a\u3057\u3044" },
-    gentleSmile: { value: "gentle smile", en: "gentle smile", zh: "\u6e29\u67d4\u5fae\u7b11", ja: "\u512a\u3057\u3044\u7b11\u9854" },
-    germanNationality: { value: "German nationality", en: "German nationality", zh: "\u5fb7\u56fd", ja: "\u30c9\u30a4\u30c4" },
-    gloves: { value: "gloves", en: "gloves", zh: "\u624b\u5957", ja: "\u624b\u888b" },
-    hanChineseEthnicity: { value: "Han Chinese ethnicity", en: "Han Chinese ethnicity", zh: "\u6c49\u65cf", ja: "\u6f22\u6c11\u65cf" },
-    hoodie: { value: "hoodie", en: "hoodie", zh: "\u536b\u8863", ja: "\u30d1\u30fc\u30ab\u30fc" },
-    idol: { value: "idol", en: "idol", zh: "\u5076\u50cf", ja: "\u30a2\u30a4\u30c9\u30eb" },
-    intimatePiercing: { value: "intimate piercing", en: "intimate piercing", zh: "\u79c1\u5bc6\u7a7f\u5b54", ja: "\u30a4\u30f3\u30c6\u30a3\u30e1\u30a4\u30c8\u30d4\u30a2\u30b9" },
-    introverted: { value: "introverted", en: "introverted", zh: "\u5185\u5411", ja: "\u5185\u5411\u7684" },
-    jacket: { value: "jacket", en: "jacket", zh: "\u5939\u514b", ja: "\u30b8\u30e3\u30b1\u30c3\u30c8" },
-    japaneseEthnicity: { value: "Japanese ethnicity", en: "Japanese ethnicity", zh: "\u65e5\u672c\u65cf\u88d4", ja: "\u65e5\u672c\u7cfb" },
-    japaneseNationality: { value: "Japanese nationality", en: "Japanese nationality", zh: "\u65e5\u672c", ja: "\u65e5\u672c" },
-    jeans: { value: "jeans", en: "jeans", zh: "\u725b\u4ed4\u88e4", ja: "\u30b8\u30fc\u30f3\u30ba" },
-    jumpsuit: { value: "jumpsuit", en: "jumpsuit", zh: "\u8fde\u4f53\u88e4", ja: "\u30b8\u30e3\u30f3\u30d7\u30b9\u30fc\u30c4" },
-    kneeSocks: { value: "knee socks", en: "knee socks", zh: "\u53ca\u819d\u889c", ja: "\u30cb\u30fc\u30bd\u30c3\u30af\u30b9" },
-    koreanEthnicity: { value: "Korean ethnicity", en: "Korean ethnicity", zh: "\u97e9\u65cf", ja: "\u97d3\u56fd\u7cfb" },
-    koreanNationality: { value: "Korean nationality", en: "Korean nationality", zh: "\u97e9\u56fd", ja: "\u97d3\u56fd" },
-    ladyboy: { value: "ladyboy", en: "ladyboy", zh: "Ladyboy", ja: "Ladyboy" },
-    latinaEthnicity: { value: "Latina ethnicity", en: "Latina ethnicity", zh: "\u62c9\u4e01\u88d4", ja: "\u30e9\u30c6\u30f3\u7cfb" },
-    lightSkin: { value: "light skin", en: "light skin", zh: "\u6d45\u80a4\u8272", ja: "\u660e\u308b\u3044\u808c" },
-    loafers: { value: "loafers", en: "loafers", zh: "\u4e50\u798f\u978b", ja: "\u30ed\u30fc\u30d5\u30a1\u30fc" },
-    longHair: { value: "long hair", en: "long hair", zh: "\u957f\u53d1", ja: "\u30ed\u30f3\u30b0\u30d8\u30a2" },
-    male: { value: "male", en: "male", zh: "\u7537", ja: "\u7537\u6027" },
-    mediumHair: { value: "medium-length hair", en: "medium-length hair", zh: "\u4e2d\u957f\u53d1", ja: "\u30df\u30c7\u30a3\u30a2\u30e0\u30d8\u30a2" },
-    mediumSkin: { value: "medium skin", en: "medium skin", zh: "\u4e2d\u7b49\u80a4\u8272", ja: "\u4e2d\u9593\u7684\u306a\u808c\u8272" },
-    melancholicExpression: { value: "melancholic expression", en: "melancholic expression", zh: "\u5fe7\u90c1", ja: "\u6182\u9b31\u306a\u8868\u60c5" },
-    messyHair: { value: "messy hair", en: "messy hair", zh: "\u51cc\u4e71\u53d1", ja: "\u4e71\u308c\u9aea" },
-    middleEasternEthnicity: { value: "Middle Eastern ethnicity", en: "Middle Eastern ethnicity", zh: "\u4e2d\u4e1c", ja: "\u4e2d\u6771\u7cfb" },
-    mysterious: { value: "mysterious", en: "mysterious", zh: "\u795e\u79d8", ja: "\u795e\u79d8\u7684" },
-    mysteriousSmile: { value: "mysterious smile", en: "mysterious smile", zh: "\u795e\u79d8\u5fae\u7b11", ja: "\u8b0e\u3081\u3044\u305f\u7b11\u307f" },
-    navelPiercing: { value: "navel piercing", en: "navel piercing", zh: "\u809a\u8110\u73af", ja: "\u3078\u305d\u30d4\u30a2\u30b9" },
-    necklace: { value: "necklace", en: "necklace", zh: "\u9879\u94fe", ja: "\u30cd\u30c3\u30af\u30ec\u30b9" },
-    neutralExpression: { value: "neutral expression", en: "neutral expression", zh: "\u5e73\u9759", ja: "\u7121\u8868\u60c5" },
-    nipplePiercing: { value: "nipple piercing", en: "nipple piercing", zh: "\u4e73\u73af", ja: "\u4e73\u9996\u30d4\u30a2\u30b9" },
-    noseRing: { value: "nose ring", en: "nose ring", zh: "\u9f3b\u73af", ja: "\u9f3b\u30d4\u30a2\u30b9" },
-    nurse: { value: "nurse", en: "nurse", zh: "\u62a4\u58eb", ja: "\u770b\u8b77\u5e2b" },
-    officeLady: { value: "office lady", en: "office lady", zh: "OL", ja: "OL" },
-    oliveSkin: { value: "olive skin", en: "olive skin", zh: "\u6a44\u6984\u80a4\u8272", ja: "\u30aa\u30ea\u30fc\u30d6\u808c" },
-    onePieceSwimsuit: { value: "one-piece swimsuit", en: "one-piece swimsuit", zh: "\u8fde\u4f53\u6cf3\u8863", ja: "\u30ef\u30f3\u30d4\u30fc\u30b9\u6c34\u7740" },
-    pantyhose: { value: "pantyhose", en: "pantyhose", zh: "\u8fde\u88e4\u889c", ja: "\u30d1\u30f3\u30b9\u30c8" },
-    pinkHair: { value: "pink hair", en: "pink hair", zh: "\u7c89\u53d1", ja: "\u30d4\u30f3\u30af\u9aea" },
-    pleatedSkirt: { value: "pleated skirt", en: "pleated skirt", zh: "\u767e\u8936\u88d9", ja: "\u30d7\u30ea\u30fc\u30c4\u30b9\u30ab\u30fc\u30c8" },
-    ponytail: { value: "ponytail", en: "ponytail", zh: "\u9a6c\u5c3e", ja: "\u30dd\u30cb\u30fc\u30c6\u30fc\u30eb" },
-    porcelainSkin: { value: "porcelain skin", en: "porcelain skin", zh: "\u74f7\u767d", ja: "\u9676\u5668\u306e\u3088\u3046\u306a\u767d\u808c" },
-    princess: { value: "princess", en: "princess", zh: "\u516c\u4e3b", ja: "\u59eb" },
-    queen: { value: "queen", en: "queen", zh: "\u5973\u738b", ja: "\u5973\u738b" },
-    rebellious: { value: "rebellious", en: "rebellious", zh: "\u53db\u9006", ja: "\u53cd\u6297\u7684" },
-    redHair: { value: "red hair", en: "red hair", zh: "\u7ea2\u53d1", ja: "\u8d64\u9aea" },
-    russianNationality: { value: "Russian nationality", en: "Russian nationality", zh: "\u4fc4\u7f57\u65af", ja: "\u30ed\u30b7\u30a2" },
-    scarf: { value: "scarf", en: "scarf", zh: "\u56f4\u5dfe", ja: "\u30de\u30d5\u30e9\u30fc" },
-    seriousExpression: { value: "serious expression", en: "serious expression", zh: "\u4e25\u8083", ja: "\u771f\u5263\u306a\u8868\u60c5" },
-    shirt: { value: "shirt", en: "shirt", zh: "\u886c\u886b", ja: "\u30b7\u30e3\u30c4" },
-    shortHair: { value: "short hair", en: "short hair", zh: "\u77ed\u53d1", ja: "\u30b7\u30e7\u30fc\u30c8\u30d8\u30a2" },
-    shorts: { value: "shorts", en: "shorts", zh: "\u77ed\u88e4", ja: "\u30b7\u30e7\u30fc\u30c8\u30d1\u30f3\u30c4" },
-    shyExpression: { value: "shy expression", en: "shy expression", zh: "\u5bb3\u7f9e", ja: "\u6065\u305a\u304b\u3057\u305d\u3046\u306a\u8868\u60c5" },
-    silkScarf: { value: "silk scarf", en: "silk scarf", zh: "\u4e1d\u5dfe", ja: "\u30b7\u30eb\u30af\u30b9\u30ab\u30fc\u30d5" },
-    silverHair: { value: "silver hair", en: "silver hair", zh: "\u94f6\u53d1", ja: "\u9280\u9aea" },
-    skirt: { value: "skirt", en: "skirt", zh: "\u88d9\u5b50", ja: "\u30b9\u30ab\u30fc\u30c8" },
-    smoothHair: { value: "smooth hair", en: "smooth hair", zh: "\u987a\u6ed1\u53d1", ja: "\u306a\u3081\u3089\u304b\u306a\u9aea" },
-    sneakers: { value: "sneakers", en: "sneakers", zh: "\u8fd0\u52a8\u978b", ja: "\u30b9\u30cb\u30fc\u30ab\u30fc" },
-    soldier: { value: "soldier", en: "soldier", zh: "\u519b\u4eba", ja: "\u8ecd\u4eba" },
-    southAsianEthnicity: { value: "South Asian ethnicity", en: "South Asian ethnicity", zh: "\u5357\u4e9a", ja: "\u5357\u30a2\u30b8\u30a2\u7cfb" },
-    southeastAsianEthnicity: { value: "Southeast Asian ethnicity", en: "Southeast Asian ethnicity", zh: "\u4e1c\u5357\u4e9a", ja: "\u6771\u5357\u30a2\u30b8\u30a2\u7cfb" },
-    stockings: { value: "stockings", en: "stockings", zh: "\u957f\u7b52\u889c", ja: "\u30b9\u30c8\u30c3\u30ad\u30f3\u30b0" },
-    straightHair: { value: "straight hair", en: "straight hair", zh: "\u76f4\u53d1", ja: "\u30b9\u30c8\u30ec\u30fc\u30c8\u30d8\u30a2" },
-    student: { value: "student", en: "student", zh: "\u5b66\u751f", ja: "\u5b66\u751f" },
-    sweater: { value: "sweater", en: "sweater", zh: "\u6bdb\u8863", ja: "\u30bb\u30fc\u30bf\u30fc" },
-    tShirt: { value: "t-shirt", en: "t-shirt", zh: "T\u6064", ja: "T\u30b7\u30e3\u30c4" },
-    tanSkin: { value: "tan skin", en: "tan skin", zh: "\u5c0f\u9ea6/\u53e4\u94dc", ja: "\u65e5\u713c\u3051\u808c" },
-    tankTop: { value: "tank top", en: "tank top", zh: "\u80cc\u5fc3", ja: "\u30bf\u30f3\u30af\u30c8\u30c3\u30d7" },
-    teacher: { value: "teacher", en: "teacher", zh: "\u6559\u5e08", ja: "\u6559\u5e2b" },
-    thighHighs: { value: "thigh highs", en: "thigh highs", zh: "\u8fc7\u819d\u889c", ja: "\u30b5\u30a4\u30cf\u30a4\u30bd\u30c3\u30af\u30b9" },
-    tonguePiercing: { value: "tongue piercing", en: "tongue piercing", zh: "\u820c\u73af", ja: "\u820c\u30d4\u30a2\u30b9" },
-    twinTails: { value: "twin tails", en: "twin tails", zh: "\u53cc\u9a6c\u5c3e", ja: "\u30c4\u30a4\u30f3\u30c6\u30fc\u30eb" },
-    veryLongHair: { value: "very long hair", en: "very long hair", zh: "\u8d85\u957f\u53d1", ja: "\u8d85\u30ed\u30f3\u30b0\u30d8\u30a2" },
-    wavyHair: { value: "wavy hair", en: "wavy hair", zh: "\u6ce2\u6d6a\u53d1", ja: "\u30a6\u30a7\u30fc\u30d6\u30d8\u30a2" },
-    whiteEuropeanEthnicity: { value: "White European ethnicity", en: "White European ethnicity", zh: "\u767d\u4eba/\u6b27\u6d32", ja: "\u767d\u4eba/\u30e8\u30fc\u30ed\u30c3\u30d1\u7cfb" },
-    whiteHair: { value: "white hair", en: "white hair", zh: "\u767d\u53d1", ja: "\u767d\u9aea" },
-    wideBrimHat: { value: "wide-brim hat", en: "wide-brim hat", zh: "\u5bbd\u6a90\u5e3d", ja: "\u3064\u3070\u5e83\u5e3d" },
-    witch: { value: "witch", en: "witch", zh: "\u5973\u5deb", ja: "\u9b54\u5973" },
-};
+function buildTranslations(labelSource){
+    const result = { zh: {}, en: {}, ja: {} };
 
+    Object.entries(labelSource).forEach(([key, labels]) => {
+        result.en[key] = labels.en || key;
+        result.zh[key] = labels.zh || labels.en || key;
+        result.ja[key] = labels.ja || labels.en || key;
+    });
+
+    return result;
+}
+
+const translations = buildTranslations(UI_LABELS);
+
+// OPTION_LABELS stores selectable character tags.
+// value is always English and is used in generated prompts / exported JSON.
+// en, zh, and ja are display labels for the UI.
+const OPTION_LABELS = {
+    "americanNationality": {
+        "value": "American nationality",
+        "en": "American nationality",
+        "zh": "美国",
+        "ja": "アメリカ"
+    },
+    "analytical": {
+        "value": "analytical",
+        "en": "analytical",
+        "zh": "理性",
+        "ja": "理性的"
+    },
+    "angryExpression": {
+        "value": "angry expression",
+        "en": "angry expression",
+        "zh": "生气",
+        "ja": "怒った表情"
+    },
+    "assassin": {
+        "value": "assassin",
+        "en": "assassin",
+        "zh": "杀手",
+        "ja": "暗殺者"
+    },
+    "balletFlats": {
+        "value": "ballet flats",
+        "en": "ballet flats",
+        "zh": "芭蕾平底鞋",
+        "ja": "バレエシューズ"
+    },
+    "bandana": {
+        "value": "bandana",
+        "en": "bandana",
+        "zh": "头巾",
+        "ja": "バンダナ"
+    },
+    "barefoot": {
+        "value": "barefoot",
+        "en": "barefoot",
+        "zh": "赤脚",
+        "ja": "裸足"
+    },
+    "baseballCap": {
+        "value": "baseball cap",
+        "en": "baseball cap",
+        "zh": "棒球帽",
+        "ja": "野球帽"
+    },
+    "beanie": {
+        "value": "beanie",
+        "en": "beanie",
+        "zh": "针织帽",
+        "ja": "ニット帽"
+    },
+    "beret": {
+        "value": "beret",
+        "en": "beret",
+        "zh": "贝雷帽",
+        "ja": "ベレー帽"
+    },
+    "bikini": {
+        "value": "bikini",
+        "en": "bikini",
+        "zh": "比基尼",
+        "ja": "ビキニ"
+    },
+    "blackAfricanEthnicity": {
+        "value": "Black African ethnicity",
+        "en": "Black African ethnicity",
+        "zh": "黑人/非洲",
+        "ja": "黒人/アフリカ系"
+    },
+    "blackHair": {
+        "value": "black hair",
+        "en": "black hair",
+        "zh": "黑发",
+        "ja": "黒髪"
+    },
+    "blondeHair": {
+        "value": "blonde hair",
+        "en": "blonde hair",
+        "zh": "金发",
+        "ja": "金髪"
+    },
+    "blueHair": {
+        "value": "blue hair",
+        "en": "blue hair",
+        "zh": "蓝发",
+        "ja": "青髪"
+    },
+    "bobCut": {
+        "value": "bob cut",
+        "en": "bob cut",
+        "zh": "波波头",
+        "ja": "ボブカット"
+    },
+    "bodyTypeAthletic": {
+        "value": "Athletic",
+        "en": "Athletic",
+        "zh": "运动员型",
+        "ja": "アスリート体型"
+    },
+    "bodyTypeCurvy": {
+        "value": "Curvy",
+        "en": "Curvy",
+        "zh": "丰满",
+        "ja": "ふくよか"
+    },
+    "bodyTypeHourglass": {
+        "value": "Hourglass",
+        "en": "Hourglass",
+        "zh": "沙漏型",
+        "ja": "砂時計型"
+    },
+    "bodyTypeModel": {
+        "value": "Model-like",
+        "en": "Model-like",
+        "zh": "模特",
+        "ja": "モデル体型"
+    },
+    "bodyTypePetite": {
+        "value": "Petite",
+        "en": "Petite",
+        "zh": "娇小",
+        "ja": "小柄"
+    },
+    "bodyTypeSlender": {
+        "value": "Slender",
+        "en": "Slender",
+        "zh": "纤细",
+        "ja": "細身"
+    },
+    "bodyTypeSlim": {
+        "value": "Slim",
+        "en": "Slim",
+        "zh": "苗条",
+        "ja": "スリム"
+    },
+    "bodyTypeTallLean": {
+        "value": "Tall and lean",
+        "en": "Tall and lean",
+        "zh": "修长",
+        "ja": "背が高く細身"
+    },
+    "boots": {
+        "value": "boots",
+        "en": "boots",
+        "zh": "靴子",
+        "ja": "ブーツ"
+    },
+    "britishNationality": {
+        "value": "British nationality",
+        "en": "British nationality",
+        "zh": "英国",
+        "ja": "イギリス"
+    },
+    "brownHair": {
+        "value": "brown hair",
+        "en": "brown hair",
+        "zh": "棕发",
+        "ja": "茶髪"
+    },
+    "brownSkin": {
+        "value": "brown skin",
+        "en": "brown skin",
+        "zh": "棕色皮肤",
+        "ja": "褐色肌"
+    },
+    "buzzCut": {
+        "value": "buzz cut",
+        "en": "buzz cut",
+        "zh": "寸头",
+        "ja": "丸刈り"
+    },
+    "calm": {
+        "value": "calm",
+        "en": "calm",
+        "zh": "冷静",
+        "ja": "冷静"
+    },
+    "cargoPants": {
+        "value": "cargo pants",
+        "en": "cargo pants",
+        "zh": "工装裤",
+        "ja": "カーゴパンツ"
+    },
+    "cheerful": {
+        "value": "cheerful",
+        "en": "cheerful",
+        "zh": "开朗",
+        "ja": "明るい"
+    },
+    "chineseNationality": {
+        "value": "Chinese nationality",
+        "en": "Chinese nationality",
+        "zh": "中国",
+        "ja": "中国"
+    },
+    "choker": {
+        "value": "choker",
+        "en": "choker",
+        "zh": "项圈",
+        "ja": "チョーカー"
+    },
+    "confidentSmile": {
+        "value": "confident smile",
+        "en": "confident smile",
+        "zh": "自信微笑",
+        "ja": "自信のある笑み"
+    },
+    "curlyHair": {
+        "value": "curly hair",
+        "en": "curly hair",
+        "zh": "卷发",
+        "ja": "カールヘア"
+    },
+    "darkSkin": {
+        "value": "dark skin",
+        "en": "dark skin",
+        "zh": "深色皮肤",
+        "ja": "濃い肌色"
+    },
+    "detective": {
+        "value": "detective",
+        "en": "detective",
+        "zh": "侦探",
+        "ja": "探偵"
+    },
+    "doctor": {
+        "value": "doctor",
+        "en": "doctor",
+        "zh": "医生",
+        "ja": "医師"
+    },
+    "dress": {
+        "value": "dress",
+        "en": "dress",
+        "zh": "连衣裙",
+        "ja": "ワンピース"
+    },
+    "earrings": {
+        "value": "earrings",
+        "en": "earrings",
+        "zh": "耳环",
+        "ja": "イヤリング"
+    },
+    "eastAsianEthnicity": {
+        "value": "East Asian ethnicity",
+        "en": "East Asian ethnicity",
+        "zh": "东亚",
+        "ja": "東アジア"
+    },
+    "elegant": {
+        "value": "elegant",
+        "en": "elegant",
+        "zh": "优雅",
+        "ja": "優雅"
+    },
+    "fairSkin": {
+        "value": "fair skin",
+        "en": "fair skin",
+        "zh": "白皙",
+        "ja": "色白"
+    },
+    "female": {
+        "value": "female",
+        "en": "female",
+        "zh": "女",
+        "ja": "女性"
+    },
+    "fingerlessGloves": {
+        "value": "fingerless gloves",
+        "en": "fingerless gloves",
+        "zh": "露指手套",
+        "ja": "指なし手袋"
+    },
+    "frenchNationality": {
+        "value": "French nationality",
+        "en": "French nationality",
+        "zh": "法国",
+        "ja": "フランス"
+    },
+    "gentle": {
+        "value": "gentle",
+        "en": "gentle",
+        "zh": "温柔",
+        "ja": "優しい"
+    },
+    "gentleSmile": {
+        "value": "gentle smile",
+        "en": "gentle smile",
+        "zh": "温柔微笑",
+        "ja": "優しい笑顔"
+    },
+    "germanNationality": {
+        "value": "German nationality",
+        "en": "German nationality",
+        "zh": "德国",
+        "ja": "ドイツ"
+    },
+    "gloves": {
+        "value": "gloves",
+        "en": "gloves",
+        "zh": "手套",
+        "ja": "手袋"
+    },
+    "hanChineseEthnicity": {
+        "value": "Han Chinese ethnicity",
+        "en": "Han Chinese ethnicity",
+        "zh": "汉族",
+        "ja": "漢民族"
+    },
+    "hoodie": {
+        "value": "hoodie",
+        "en": "hoodie",
+        "zh": "卫衣",
+        "ja": "パーカー"
+    },
+    "idol": {
+        "value": "idol",
+        "en": "idol",
+        "zh": "偶像",
+        "ja": "アイドル"
+    },
+    "intimatePiercing": {
+        "value": "intimate piercing",
+        "en": "intimate piercing",
+        "zh": "私密穿孔",
+        "ja": "インティメイトピアス"
+    },
+    "introverted": {
+        "value": "introverted",
+        "en": "introverted",
+        "zh": "内向",
+        "ja": "内向的"
+    },
+    "jacket": {
+        "value": "jacket",
+        "en": "jacket",
+        "zh": "夹克",
+        "ja": "ジャケット"
+    },
+    "japaneseEthnicity": {
+        "value": "Japanese ethnicity",
+        "en": "Japanese ethnicity",
+        "zh": "日本族裔",
+        "ja": "日本系"
+    },
+    "japaneseNationality": {
+        "value": "Japanese nationality",
+        "en": "Japanese nationality",
+        "zh": "日本",
+        "ja": "日本"
+    },
+    "jeans": {
+        "value": "jeans",
+        "en": "jeans",
+        "zh": "牛仔裤",
+        "ja": "ジーンズ"
+    },
+    "jumpsuit": {
+        "value": "jumpsuit",
+        "en": "jumpsuit",
+        "zh": "连体裤",
+        "ja": "ジャンプスーツ"
+    },
+    "kneeSocks": {
+        "value": "knee socks",
+        "en": "knee socks",
+        "zh": "及膝袜",
+        "ja": "ニーソックス"
+    },
+    "koreanEthnicity": {
+        "value": "Korean ethnicity",
+        "en": "Korean ethnicity",
+        "zh": "韩族",
+        "ja": "韓国系"
+    },
+    "koreanNationality": {
+        "value": "Korean nationality",
+        "en": "Korean nationality",
+        "zh": "韩国",
+        "ja": "韓国"
+    },
+    "ladyboy": {
+        "value": "ladyboy",
+        "en": "ladyboy",
+        "zh": "Ladyboy",
+        "ja": "Ladyboy"
+    },
+    "latinaEthnicity": {
+        "value": "Latina ethnicity",
+        "en": "Latina ethnicity",
+        "zh": "拉丁裔",
+        "ja": "ラテン系"
+    },
+    "lightSkin": {
+        "value": "light skin",
+        "en": "light skin",
+        "zh": "浅肤色",
+        "ja": "明るい肌"
+    },
+    "loafers": {
+        "value": "loafers",
+        "en": "loafers",
+        "zh": "乐福鞋",
+        "ja": "ローファー"
+    },
+    "longHair": {
+        "value": "long hair",
+        "en": "long hair",
+        "zh": "长发",
+        "ja": "ロングヘア"
+    },
+    "male": {
+        "value": "male",
+        "en": "male",
+        "zh": "男",
+        "ja": "男性"
+    },
+    "mediumHair": {
+        "value": "medium-length hair",
+        "en": "medium-length hair",
+        "zh": "中长发",
+        "ja": "ミディアムヘア"
+    },
+    "mediumSkin": {
+        "value": "medium skin",
+        "en": "medium skin",
+        "zh": "中等肤色",
+        "ja": "中間的な肌色"
+    },
+    "melancholicExpression": {
+        "value": "melancholic expression",
+        "en": "melancholic expression",
+        "zh": "忧郁",
+        "ja": "憂鬱な表情"
+    },
+    "messyHair": {
+        "value": "messy hair",
+        "en": "messy hair",
+        "zh": "凌乱发",
+        "ja": "乱れ髪"
+    },
+    "middleEasternEthnicity": {
+        "value": "Middle Eastern ethnicity",
+        "en": "Middle Eastern ethnicity",
+        "zh": "中东",
+        "ja": "中東系"
+    },
+    "mysterious": {
+        "value": "mysterious",
+        "en": "mysterious",
+        "zh": "神秘",
+        "ja": "神秘的"
+    },
+    "mysteriousSmile": {
+        "value": "mysterious smile",
+        "en": "mysterious smile",
+        "zh": "神秘微笑",
+        "ja": "謎めいた笑み"
+    },
+    "navelPiercing": {
+        "value": "navel piercing",
+        "en": "navel piercing",
+        "zh": "肚脐环",
+        "ja": "へそピアス"
+    },
+    "necklace": {
+        "value": "necklace",
+        "en": "necklace",
+        "zh": "项链",
+        "ja": "ネックレス"
+    },
+    "neutralExpression": {
+        "value": "neutral expression",
+        "en": "neutral expression",
+        "zh": "平静",
+        "ja": "無表情"
+    },
+    "nipplePiercing": {
+        "value": "nipple piercing",
+        "en": "nipple piercing",
+        "zh": "乳环",
+        "ja": "乳首ピアス"
+    },
+    "noseRing": {
+        "value": "nose ring",
+        "en": "nose ring",
+        "zh": "鼻环",
+        "ja": "鼻ピアス"
+    },
+    "nurse": {
+        "value": "nurse",
+        "en": "nurse",
+        "zh": "护士",
+        "ja": "看護師"
+    },
+    "officeLady": {
+        "value": "office lady",
+        "en": "office lady",
+        "zh": "OL",
+        "ja": "OL"
+    },
+    "oliveSkin": {
+        "value": "olive skin",
+        "en": "olive skin",
+        "zh": "橄榄肤色",
+        "ja": "オリーブ肌"
+    },
+    "onePieceSwimsuit": {
+        "value": "one-piece swimsuit",
+        "en": "one-piece swimsuit",
+        "zh": "连体泳衣",
+        "ja": "ワンピース水着"
+    },
+    "pantyhose": {
+        "value": "pantyhose",
+        "en": "pantyhose",
+        "zh": "连裤袜",
+        "ja": "パンスト"
+    },
+    "pinkHair": {
+        "value": "pink hair",
+        "en": "pink hair",
+        "zh": "粉发",
+        "ja": "ピンク髪"
+    },
+    "pleatedSkirt": {
+        "value": "pleated skirt",
+        "en": "pleated skirt",
+        "zh": "百褶裙",
+        "ja": "プリーツスカート"
+    },
+    "ponytail": {
+        "value": "ponytail",
+        "en": "ponytail",
+        "zh": "马尾",
+        "ja": "ポニーテール"
+    },
+    "porcelainSkin": {
+        "value": "porcelain skin",
+        "en": "porcelain skin",
+        "zh": "瓷白",
+        "ja": "陶器のような白肌"
+    },
+    "princess": {
+        "value": "princess",
+        "en": "princess",
+        "zh": "公主",
+        "ja": "姫"
+    },
+    "queen": {
+        "value": "queen",
+        "en": "queen",
+        "zh": "女王",
+        "ja": "女王"
+    },
+    "rebellious": {
+        "value": "rebellious",
+        "en": "rebellious",
+        "zh": "叛逆",
+        "ja": "反抗的"
+    },
+    "redHair": {
+        "value": "red hair",
+        "en": "red hair",
+        "zh": "红发",
+        "ja": "赤髪"
+    },
+    "russianNationality": {
+        "value": "Russian nationality",
+        "en": "Russian nationality",
+        "zh": "俄罗斯",
+        "ja": "ロシア"
+    },
+    "scarf": {
+        "value": "scarf",
+        "en": "scarf",
+        "zh": "围巾",
+        "ja": "マフラー"
+    },
+    "seriousExpression": {
+        "value": "serious expression",
+        "en": "serious expression",
+        "zh": "严肃",
+        "ja": "真剣な表情"
+    },
+    "shirt": {
+        "value": "shirt",
+        "en": "shirt",
+        "zh": "衬衫",
+        "ja": "シャツ"
+    },
+    "shortHair": {
+        "value": "short hair",
+        "en": "short hair",
+        "zh": "短发",
+        "ja": "ショートヘア"
+    },
+    "shorts": {
+        "value": "shorts",
+        "en": "shorts",
+        "zh": "短裤",
+        "ja": "ショートパンツ"
+    },
+    "shyExpression": {
+        "value": "shy expression",
+        "en": "shy expression",
+        "zh": "害羞",
+        "ja": "恥ずかしそうな表情"
+    },
+    "silkScarf": {
+        "value": "silk scarf",
+        "en": "silk scarf",
+        "zh": "丝巾",
+        "ja": "シルクスカーフ"
+    },
+    "silverHair": {
+        "value": "silver hair",
+        "en": "silver hair",
+        "zh": "银发",
+        "ja": "銀髪"
+    },
+    "skirt": {
+        "value": "skirt",
+        "en": "skirt",
+        "zh": "裙子",
+        "ja": "スカート"
+    },
+    "smoothHair": {
+        "value": "smooth hair",
+        "en": "smooth hair",
+        "zh": "顺滑发",
+        "ja": "なめらかな髪"
+    },
+    "sneakers": {
+        "value": "sneakers",
+        "en": "sneakers",
+        "zh": "运动鞋",
+        "ja": "スニーカー"
+    },
+    "soldier": {
+        "value": "soldier",
+        "en": "soldier",
+        "zh": "军人",
+        "ja": "軍人"
+    },
+    "southAsianEthnicity": {
+        "value": "South Asian ethnicity",
+        "en": "South Asian ethnicity",
+        "zh": "南亚",
+        "ja": "南アジア系"
+    },
+    "southeastAsianEthnicity": {
+        "value": "Southeast Asian ethnicity",
+        "en": "Southeast Asian ethnicity",
+        "zh": "东南亚",
+        "ja": "東南アジア系"
+    },
+    "stockings": {
+        "value": "stockings",
+        "en": "stockings",
+        "zh": "长筒袜",
+        "ja": "ストッキング"
+    },
+    "straightHair": {
+        "value": "straight hair",
+        "en": "straight hair",
+        "zh": "直发",
+        "ja": "ストレートヘア"
+    },
+    "student": {
+        "value": "student",
+        "en": "student",
+        "zh": "学生",
+        "ja": "学生"
+    },
+    "sweater": {
+        "value": "sweater",
+        "en": "sweater",
+        "zh": "毛衣",
+        "ja": "セーター"
+    },
+    "tShirt": {
+        "value": "t-shirt",
+        "en": "t-shirt",
+        "zh": "T恤",
+        "ja": "Tシャツ"
+    },
+    "tanSkin": {
+        "value": "tan skin",
+        "en": "tan skin",
+        "zh": "小麦/古铜",
+        "ja": "日焼け肌"
+    },
+    "tankTop": {
+        "value": "tank top",
+        "en": "tank top",
+        "zh": "背心",
+        "ja": "タンクトップ"
+    },
+    "teacher": {
+        "value": "teacher",
+        "en": "teacher",
+        "zh": "教师",
+        "ja": "教師"
+    },
+    "thighHighs": {
+        "value": "thigh highs",
+        "en": "thigh highs",
+        "zh": "过膝袜",
+        "ja": "サイハイソックス"
+    },
+    "tonguePiercing": {
+        "value": "tongue piercing",
+        "en": "tongue piercing",
+        "zh": "舌环",
+        "ja": "舌ピアス"
+    },
+    "twinTails": {
+        "value": "twin tails",
+        "en": "twin tails",
+        "zh": "双马尾",
+        "ja": "ツインテール"
+    },
+    "veryLongHair": {
+        "value": "very long hair",
+        "en": "very long hair",
+        "zh": "超长发",
+        "ja": "超ロングヘア"
+    },
+    "wavyHair": {
+        "value": "wavy hair",
+        "en": "wavy hair",
+        "zh": "波浪发",
+        "ja": "ウェーブヘア"
+    },
+    "whiteEuropeanEthnicity": {
+        "value": "White European ethnicity",
+        "en": "White European ethnicity",
+        "zh": "白人/欧洲",
+        "ja": "白人/ヨーロッパ系"
+    },
+    "whiteHair": {
+        "value": "white hair",
+        "en": "white hair",
+        "zh": "白发",
+        "ja": "白髪"
+    },
+    "wideBrimHat": {
+        "value": "wide-brim hat",
+        "en": "wide-brim hat",
+        "zh": "宽檐帽",
+        "ja": "つば広帽"
+    },
+    "witch": {
+        "value": "witch",
+        "en": "witch",
+        "zh": "女巫",
+        "ja": "魔女"
+    }
+};
 function getCurrentLanguage(){
     return document.getElementById("language")?.value || "en";
 }
 
 function t(key){
     const lang = getCurrentLanguage();
-    return translations[lang]?.[key] || translations.en[key] || translations.zh[key] || key;
+    const optionLabel = OPTION_LABELS[key];
+
+    return translations[lang]?.[key]
+        || translations.en[key]
+        || optionLabel?.[lang]
+        || optionLabel?.en
+        || key;
 }
 
 function labelText(key){

@@ -41,14 +41,24 @@ h2{
 
 label{
     display:block;
-    margin-top:8px;
+    margin-top:10px;
+    margin-bottom:4px;
     font-size:14px;
 }
 
-input, select, textarea{
+input, textarea{
     width:100%;
     padding:7px;
-    margin-top:3px;
+    margin-top:0;
+    box-sizing:border-box;
+}
+
+select{
+    width:fit-content;
+    min-width:120px;
+    max-width:240px;
+    padding:7px;
+    margin-top:0;
     box-sizing:border-box;
 }
 
@@ -109,4 +119,16 @@ summary{
 .checkbox-group.compact label{
     width:48%;
     margin-top:6px;
+}
+/* Keep dropdowns compact while preserving full-width text input fields. */
+select.compact-select{
+    width:fit-content;
+    min-width:120px;
+    max-width:240px;
+}
+
+/* Slightly tighten checkbox tag spacing for dense tag groups. */
+.checkbox-group label{
+    margin-top:4px;
+    margin-bottom:4px;
 }
