@@ -287,6 +287,7 @@ const translations = {
         smoothHair: "Smooth hair",
 
         bodyShape: "Body",
+        bodyTypeLabel: "Body Type",
         bust: "Bust",
         waist: "Waist",
         hips: "Hips",
@@ -470,7 +471,8 @@ const translations = {
         messyHair: "乱れ髪",
         smoothHair: "なめらかな髪",
 
-        bodyShape: "体型",
+        bodyShape: "スタイル",
+        bodyTypeLabel: "体型",
         bust: "バスト",
         waist: "ウエスト",
         hips: "ヒップ",
