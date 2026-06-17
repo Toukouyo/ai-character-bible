@@ -32,15 +32,21 @@
 <label data-i18n="name">角色名称</label>
 <input id="name">
 
-<label data-i18n="age">年龄</label>
-<input id="age" type="number">
+<div class="inline-controls age-gender-row">
+    <div class="inline-control compact-control">
+        <label data-i18n="age">年龄</label>
+        <input id="age" type="number">
+    </div>
 
-<label data-i18n="gender">性别</label>
-<select id="gender">
-    <option value="male" data-i18n="male">男</option>
-    <option value="female" data-i18n="female">女</option>
-    <option value="ladyboy" data-i18n="ladyboy">Ladyboy</option>
-</select>
+    <div class="inline-control compact-control">
+        <label data-i18n="gender">性别</label>
+        <select id="gender">
+            <option value="male" data-i18n="male">男</option>
+            <option value="female" data-i18n="female">女</option>
+            <option value="ladyboy" data-i18n="ladyboy">Ladyboy</option>
+        </select>
+    </div>
+</div>
 
 <details>
     <summary data-i18n="nationalitySection">国籍</summary>
@@ -76,35 +82,41 @@
     <input id="customEthnicity" placeholder="mixed Eurasian ethnicity">
 </details>
 
-<label data-i18n="skinTone">肤色</label>
-<select id="skinTone">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="porcelain skin" data-i18n="porcelainSkin">瓷白</option>
-    <option value="fair skin" data-i18n="fairSkin">白皙</option>
-    <option value="light skin" data-i18n="lightSkin">浅肤色</option>
-    <option value="medium skin" data-i18n="mediumSkin">中等肤色</option>
-    <option value="olive skin" data-i18n="oliveSkin">橄榄肤色</option>
-    <option value="tan skin" data-i18n="tanSkin">小麦/古铜</option>
-    <option value="brown skin" data-i18n="brownSkin">棕色皮肤</option>
-    <option value="dark skin" data-i18n="darkSkin">深色皮肤</option>
-</select>
+<div class="inline-controls skin-occupation-row">
+    <div class="inline-control compact-control">
+        <label data-i18n="skinTone">肤色</label>
+        <select id="skinTone">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="porcelain skin" data-i18n="porcelainSkin">瓷白</option>
+            <option value="fair skin" data-i18n="fairSkin">白皙</option>
+            <option value="light skin" data-i18n="lightSkin">浅肤色</option>
+            <option value="medium skin" data-i18n="mediumSkin">中等肤色</option>
+            <option value="olive skin" data-i18n="oliveSkin">橄榄肤色</option>
+            <option value="tan skin" data-i18n="tanSkin">小麦/古铜</option>
+            <option value="brown skin" data-i18n="brownSkin">棕色皮肤</option>
+            <option value="dark skin" data-i18n="darkSkin">深色皮肤</option>
+        </select>
+    </div>
 
-<label data-i18n="occupation">职业 / 身份</label>
-<select id="occupation">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="idol" data-i18n="idol">偶像</option>
-    <option value="assassin" data-i18n="assassin">杀手</option>
-    <option value="student" data-i18n="student">学生</option>
-    <option value="office lady" data-i18n="officeLady">OL</option>
-    <option value="teacher" data-i18n="teacher">教师</option>
-    <option value="detective" data-i18n="detective">侦探</option>
-    <option value="doctor" data-i18n="doctor">医生</option>
-    <option value="nurse" data-i18n="nurse">护士</option>
-    <option value="soldier" data-i18n="soldier">军人</option>
-    <option value="princess" data-i18n="princess">公主</option>
-    <option value="queen" data-i18n="queen">女王</option>
-    <option value="witch" data-i18n="witch">女巫</option>
-</select>
+    <div class="inline-control compact-control">
+        <label data-i18n="occupation">职业 / 身份</label>
+        <select id="occupation">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="idol" data-i18n="idol">偶像</option>
+            <option value="assassin" data-i18n="assassin">杀手</option>
+            <option value="student" data-i18n="student">学生</option>
+            <option value="office lady" data-i18n="officeLady">OL</option>
+            <option value="teacher" data-i18n="teacher">教师</option>
+            <option value="detective" data-i18n="detective">侦探</option>
+            <option value="doctor" data-i18n="doctor">医生</option>
+            <option value="nurse" data-i18n="nurse">护士</option>
+            <option value="soldier" data-i18n="soldier">军人</option>
+            <option value="princess" data-i18n="princess">公主</option>
+            <option value="queen" data-i18n="queen">女王</option>
+            <option value="witch" data-i18n="witch">女巫</option>
+        </select>
+    </div>
+</div>
 <label data-i18n="customOccupation">自定义职业 / 身份</label>
 <input id="customOccupation" placeholder="philosopher, judge, rebel leader">
 
@@ -128,109 +140,100 @@
 </div>
 
 <div class="section">
-<h2 data-i18n="hair">头发</h2>
+<h2><span data-i18n="hair">头发</span> / <span data-i18n="faceAndAccessories">面部与装饰</span></h2>
 
-<label data-i18n="hairLength">发型长度</label>
-<select id="hairLength">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="short hair" data-i18n="shortHair">短发</option>
-    <option value="medium-length hair" data-i18n="mediumHair">中长发</option>
-    <option value="long hair" data-i18n="longHair">长发</option>
-    <option value="very long hair" data-i18n="veryLongHair">超长发</option>
-    <option value="bob cut" data-i18n="bobCut">波波头</option>
-    <option value="ponytail" data-i18n="ponytail">马尾</option>
-    <option value="twin tails" data-i18n="twinTails">双马尾</option>
-    <option value="buzz cut" data-i18n="buzzCut">寸头</option>
-</select>
-
-<label data-i18n="hairColor">发色</label>
-<select id="hairColor">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="black hair" data-i18n="blackHair">黑发</option>
-    <option value="brown hair" data-i18n="brownHair">棕发</option>
-    <option value="blonde hair" data-i18n="blondeHair">金发</option>
-    <option value="silver hair" data-i18n="silverHair">银发</option>
-    <option value="white hair" data-i18n="whiteHair">白发</option>
-    <option value="red hair" data-i18n="redHair">红发</option>
-    <option value="blue hair" data-i18n="blueHair">蓝发</option>
-    <option value="pink hair" data-i18n="pinkHair">粉发</option>
-</select>
-
-<label data-i18n="hairTexture">发质 / 发型状态</label>
-<select id="hairTexture">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="straight hair" data-i18n="straightHair">直发</option>
-    <option value="wavy hair" data-i18n="wavyHair">波浪发</option>
-    <option value="curly hair" data-i18n="curlyHair">卷发</option>
-    <option value="messy hair" data-i18n="messyHair">凌乱发</option>
-    <option value="smooth hair" data-i18n="smoothHair">顺滑发</option>
-</select>
-</div>
-
-<div class="section">
-<h2 data-i18n="bodyShape">身材</h2>
-
-<div class="body-top-controls">
-    <div class="body-control">
-        <label data-i18n="bodyTypeLabel">体型标签</label>
-        <select id="bodyType" onchange="applyBodyTypePreset()">
+<div class="inline-controls hair-detail-row">
+    <div class="inline-control">
+        <label data-i18n="hairLength">发型长度</label>
+        <select id="hairLength">
             <option value="" data-i18n="notSelected">未选择</option>
-            <option value="Slender" data-i18n="bodyTypeSlender">纤细</option>
-            <option value="Slim" data-i18n="bodyTypeSlim">苗条</option>
-            <option value="Curvy" data-i18n="bodyTypeCurvy">丰满</option>
-            <option value="Athletic" data-i18n="bodyTypeAthletic">运动员型</option>
-            <option value="Hourglass" data-i18n="bodyTypeHourglass">沙漏型</option>
-            <option value="Petite" data-i18n="bodyTypePetite">娇小</option>
-            <option value="Tall and lean" data-i18n="bodyTypeTallLean">修长</option>
-            <option value="Model-like" data-i18n="bodyTypeModel">模特</option>
+            <option value="very short hair" data-i18n="veryShortHair">极短发</option>
+            <option value="short hair" data-i18n="shortHair">短发</option>
+            <option value="medium-length hair" data-i18n="mediumHair">中长发</option>
+            <option value="shoulder-length hair" data-i18n="shoulderLengthHair">及肩发</option>
+            <option value="long hair" data-i18n="longHair">长发</option>
+            <option value="very long hair" data-i18n="veryLongHair">超长发</option>
         </select>
     </div>
 
-    <div class="body-control">
-        <label data-i18n="breastShapeLabel">胸形</label>
-        <select id="breastShape">
+    <div class="inline-control">
+        <label data-i18n="hairColor">发色</label>
+        <select id="hairColor">
             <option value="" data-i18n="notSelected">未选择</option>
-            <option value="natural breast shape" data-i18n="breastShapeNatural">自然</option>
-            <option value="round breast shape" data-i18n="breastShapeRound">圆润</option>
-            <option value="teardrop breast shape" data-i18n="breastShapeTeardrop">水滴形</option>
-            <option value="wide-set breast shape" data-i18n="breastShapeWideSet">间距较宽</option>
-            <option value="close-set breast shape" data-i18n="breastShapeCloseSet">间距较近</option>
-            <option value="athletic chest shape" data-i18n="breastShapeAthletic">运动型</option>
+            <option value="black hair" data-i18n="blackHair">黑发</option>
+            <option value="brown hair" data-i18n="brownHair">棕发</option>
+            <option value="blonde hair" data-i18n="blondeHair">金发</option>
+            <option value="silver hair" data-i18n="silverHair">银发</option>
+            <option value="white hair" data-i18n="whiteHair">白发</option>
+            <option value="red hair" data-i18n="redHair">红发</option>
+            <option value="blue hair" data-i18n="blueHair">蓝发</option>
+            <option value="pink hair" data-i18n="pinkHair">粉发</option>
         </select>
     </div>
 
-    <div class="body-control">
-        <label data-i18n="hipShapeLabel">臀形状</label>
-        <select id="hipShape">
+    <div class="inline-control">
+        <label data-i18n="hairTexture">发质</label>
+        <select id="hairTexture">
             <option value="" data-i18n="notSelected">未选择</option>
-            <option value="round hip shape" data-i18n="hipShapeRound">圆润</option>
-            <option value="heart-shaped hips" data-i18n="hipShapeHeart">心形</option>
-            <option value="pear-shaped hips" data-i18n="hipShapePear">梨形</option>
-            <option value="athletic hip shape" data-i18n="hipShapeAthletic">运动型</option>
-            <option value="narrow hips" data-i18n="hipShapeNarrow">窄臀</option>
-            <option value="wide hips" data-i18n="hipShapeWide">宽臀</option>
+            <option value="straight hair" data-i18n="straightHair">直发</option>
+            <option value="wavy hair" data-i18n="wavyHair">波浪发</option>
+            <option value="curly hair" data-i18n="curlyHair">卷发</option>
+            <option value="silky hair" data-i18n="silkyHair">丝滑发质</option>
+            <option value="thick hair" data-i18n="thickHair">浓密发质</option>
+            <option value="fine hair" data-i18n="fineHair">细软发质</option>
+            <option value="coarse hair" data-i18n="coarseHair">粗硬发质</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="hairCondition">发型状态</label>
+        <select id="hairCondition">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="bob cut" data-i18n="bobCut">波波头</option>
+            <option value="ponytail" data-i18n="ponytail">马尾</option>
+            <option value="twin tails" data-i18n="twinTails">双马尾</option>
+            <option value="buzz cut" data-i18n="buzzCut">寸头</option>
+            <option value="braided hair" data-i18n="braidedHair">编发</option>
+            <option value="bun hairstyle" data-i18n="bunHairstyle">发髻</option>
+            <option value="hime cut" data-i18n="himeCut">姬发式</option>
+            <option value="pixie cut" data-i18n="pixieCut">精灵短发</option>
+            <option value="neatly styled hair" data-i18n="neatlyStyledHair">整齐</option>
+            <option value="messy hair" data-i18n="messyHair">凌乱</option>
+            <option value="fluffy hair" data-i18n="fluffyHair">蓬松</option>
+            <option value="wet hair" data-i18n="wetHair">湿发</option>
+            <option value="wind-swept hair" data-i18n="windSweptHair">被风吹乱</option>
+            <option value="slightly tousled hair" data-i18n="slightlyTousledHair">微微凌乱</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="bangsShape">刘海形状</label>
+        <select id="bangsShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="no bangs" data-i18n="noBangs">无刘海</option>
+            <option value="straight bangs" data-i18n="straightBangs">齐刘海</option>
+            <option value="side-swept bangs" data-i18n="sideSweptBangs">斜刘海</option>
+            <option value="curtain bangs" data-i18n="curtainBangs">八字刘海</option>
+            <option value="wispy bangs" data-i18n="wispyBangs">空气刘海</option>
+            <option value="short bangs" data-i18n="shortBangs">短刘海</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="hairStrands">发丝细节</label>
+        <select id="hairStrands">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="loose hair strands" data-i18n="looseHairStrands">零散发丝</option>
+            <option value="face-framing hair strands" data-i18n="faceFramingHairStrands">脸侧发丝</option>
+            <option value="flyaway hair strands" data-i18n="flyawayHairStrands">翘起碎发</option>
+            <option value="thin hair strands" data-i18n="thinHairStrands">细发丝</option>
+            <option value="layered hair strands" data-i18n="layeredHairStrands">层次发丝</option>
+            <option value="glossy hair strands" data-i18n="glossyHairStrands">高光发丝</option>
         </select>
     </div>
 </div>
 
-<label><span data-i18n="bust">胸围</span>：<span id="bustValue">85</span> cm</label>
-<input id="bust" type="range" min="50" max="130" value="85" oninput="updateRangeValue('bust')">
-
-<label><span data-i18n="waist">腰围</span>：<span id="waistValue">60</span> cm</label>
-<input id="waist" type="range" min="40" max="120" value="60" oninput="updateRangeValue('waist')">
-
-<label><span data-i18n="hips">臀围</span>：<span id="hipsValue">88</span> cm</label>
-<input id="hips" type="range" min="50" max="140" value="88" oninput="updateRangeValue('hips')">
-
-<label><span data-i18n="height">身高</span>：<span id="heightValue">170</span> cm</label>
-<input id="height" type="range" min="120" max="220" value="170" oninput="updateRangeValue('height')">
-
-<label><span data-i18n="weight">体重</span>：<span id="weightValue">60</span> kg</label>
-<input id="weight" type="range" min="30" max="150" value="60" oninput="updateRangeValue('weight')">
-</div>
-
-<div class="section">
-<h2 data-i18n="faceAndAccessories">面部与装饰</h2>
+<hr>
 
 <label data-i18n="face">面部特征</label>
 <input id="face" placeholder="sharp eyes, beauty mark, freckles">
@@ -320,7 +323,67 @@
 </details>
 </div>
 
+<div class="section">
+<h2 data-i18n="bodyShape">身材</h2>
 
+<div class="body-top-controls">
+    <div class="body-control">
+        <label data-i18n="bodyTypeLabel">体型标签</label>
+        <select id="bodyType" onchange="applyBodyTypePreset()">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="Slender" data-i18n="bodyTypeSlender">纤细</option>
+            <option value="Slim" data-i18n="bodyTypeSlim">苗条</option>
+            <option value="Curvy" data-i18n="bodyTypeCurvy">丰满</option>
+            <option value="Athletic" data-i18n="bodyTypeAthletic">运动员型</option>
+            <option value="Hourglass" data-i18n="bodyTypeHourglass">沙漏型</option>
+            <option value="Petite" data-i18n="bodyTypePetite">娇小</option>
+            <option value="Tall and lean" data-i18n="bodyTypeTallLean">修长</option>
+            <option value="Model-like" data-i18n="bodyTypeModel">模特</option>
+        </select>
+    </div>
+
+    <div class="body-control">
+        <label data-i18n="breastShapeLabel">胸形</label>
+        <select id="breastShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="natural breast shape" data-i18n="breastShapeNatural">自然</option>
+            <option value="round breast shape" data-i18n="breastShapeRound">圆润</option>
+            <option value="teardrop breast shape" data-i18n="breastShapeTeardrop">水滴形</option>
+            <option value="wide-set breast shape" data-i18n="breastShapeWideSet">间距较宽</option>
+            <option value="close-set breast shape" data-i18n="breastShapeCloseSet">间距较近</option>
+            <option value="athletic chest shape" data-i18n="breastShapeAthletic">运动型</option>
+        </select>
+    </div>
+
+    <div class="body-control">
+        <label data-i18n="hipShapeLabel">臀形状</label>
+        <select id="hipShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="round hip shape" data-i18n="hipShapeRound">圆润</option>
+            <option value="heart-shaped hips" data-i18n="hipShapeHeart">心形</option>
+            <option value="pear-shaped hips" data-i18n="hipShapePear">梨形</option>
+            <option value="athletic hip shape" data-i18n="hipShapeAthletic">运动型</option>
+            <option value="narrow hips" data-i18n="hipShapeNarrow">窄臀</option>
+            <option value="wide hips" data-i18n="hipShapeWide">宽臀</option>
+        </select>
+    </div>
+</div>
+
+<label><span data-i18n="bust">胸围</span>：<span id="bustValue">85</span> cm</label>
+<input id="bust" type="range" min="50" max="130" value="85" oninput="updateRangeValue('bust')">
+
+<label><span data-i18n="waist">腰围</span>：<span id="waistValue">60</span> cm</label>
+<input id="waist" type="range" min="40" max="120" value="60" oninput="updateRangeValue('waist')">
+
+<label><span data-i18n="hips">臀围</span>：<span id="hipsValue">88</span> cm</label>
+<input id="hips" type="range" min="50" max="140" value="88" oninput="updateRangeValue('hips')">
+
+<label><span data-i18n="height">身高</span>：<span id="heightValue">170</span> cm</label>
+<input id="height" type="range" min="120" max="220" value="170" oninput="updateRangeValue('height')">
+
+<label><span data-i18n="weight">体重</span>：<span id="weightValue">60</span> kg</label>
+<input id="weight" type="range" min="30" max="150" value="60" oninput="updateRangeValue('weight')">
+</div>
 
 <div class="section">
 <h2 data-i18n="clothing">服装</h2>

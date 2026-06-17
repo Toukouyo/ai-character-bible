@@ -127,9 +127,24 @@ const UI_LABELS = {
         "ja": "髪色"
     },
     "hairTexture": {
-        "en": "Hair Texture / Style",
-        "zh": "发质 / 发型状态",
-        "ja": "髪質 / 髪型の状態"
+        "en": "Hair Texture",
+        "zh": "发质",
+        "ja": "髪質"
+    },
+    "hairCondition": {
+        "en": "Hairstyle / Condition",
+        "zh": "发型状态",
+        "ja": "髪型 / 状態"
+    },
+    "bangsShape": {
+        "en": "Bangs Shape",
+        "zh": "刘海形状",
+        "ja": "前髪の形"
+    },
+    "hairStrands": {
+        "en": "Hair Strands",
+        "zh": "发丝细节",
+        "ja": "髪の束感"
     },
     "notSelected": {
         "en": "Not selected",
@@ -1135,6 +1150,35 @@ const OPTION_LABELS = {
         "zh": "女巫",
         "ja": "魔女"
     }
+,
+
+    "veryShortHair": { "value": "very short hair", "en": "very short hair", "zh": "极短发", "ja": "ベリーショート" },
+    "shoulderLengthHair": { "value": "shoulder-length hair", "en": "shoulder-length hair", "zh": "及肩发", "ja": "肩までの髪" },
+    "silkyHair": { "value": "silky hair", "en": "silky hair", "zh": "丝滑发质", "ja": "絹のような髪質" },
+    "thickHair": { "value": "thick hair", "en": "thick hair", "zh": "浓密发质", "ja": "濃い髪質" },
+    "fineHair": { "value": "fine hair", "en": "fine hair", "zh": "细软发质", "ja": "細く柔らかい髪質" },
+    "coarseHair": { "value": "coarse hair", "en": "coarse hair", "zh": "粗硬发质", "ja": "硬めの髪質" },
+    "braidedHair": { "value": "braided hair", "en": "braided hair", "zh": "编发", "ja": "編み髪" },
+    "bunHairstyle": { "value": "bun hairstyle", "en": "bun hairstyle", "zh": "发髻", "ja": "お団子ヘア" },
+    "himeCut": { "value": "hime cut", "en": "hime cut", "zh": "姬发式", "ja": "姫カット" },
+    "pixieCut": { "value": "pixie cut", "en": "pixie cut", "zh": "精灵短发", "ja": "ピクシーカット" },
+    "neatlyStyledHair": { "value": "neatly styled hair", "en": "neatly styled hair", "zh": "整齐", "ja": "きれいに整えた髪" },
+    "fluffyHair": { "value": "fluffy hair", "en": "fluffy hair", "zh": "蓬松", "ja": "ふんわりした髪" },
+    "wetHair": { "value": "wet hair", "en": "wet hair", "zh": "湿发", "ja": "濡れ髪" },
+    "windSweptHair": { "value": "wind-swept hair", "en": "wind-swept hair", "zh": "被风吹乱", "ja": "風になびいた髪" },
+    "slightlyTousledHair": { "value": "slightly tousled hair", "en": "slightly tousled hair", "zh": "微微凌乱", "ja": "少し乱れた髪" },
+    "noBangs": { "value": "no bangs", "en": "no bangs", "zh": "无刘海", "ja": "前髪なし" },
+    "straightBangs": { "value": "straight bangs", "en": "straight bangs", "zh": "齐刘海", "ja": "ぱっつん前髪" },
+    "sideSweptBangs": { "value": "side-swept bangs", "en": "side-swept bangs", "zh": "斜刘海", "ja": "流し前髪" },
+    "curtainBangs": { "value": "curtain bangs", "en": "curtain bangs", "zh": "八字刘海", "ja": "カーテンバング" },
+    "wispyBangs": { "value": "wispy bangs", "en": "wispy bangs", "zh": "空气刘海", "ja": "シースルーバング" },
+    "shortBangs": { "value": "short bangs", "en": "short bangs", "zh": "短刘海", "ja": "短い前髪" },
+    "looseHairStrands": { "value": "loose hair strands", "en": "loose hair strands", "zh": "零散发丝", "ja": "ほつれ毛" },
+    "faceFramingHairStrands": { "value": "face-framing hair strands", "en": "face-framing hair strands", "zh": "脸侧发丝", "ja": "顔周りの髪束" },
+    "flyawayHairStrands": { "value": "flyaway hair strands", "en": "flyaway hair strands", "zh": "翘起碎发", "ja": "跳ねた後れ毛" },
+    "thinHairStrands": { "value": "thin hair strands", "en": "thin hair strands", "zh": "细发丝", "ja": "細い髪束" },
+    "layeredHairStrands": { "value": "layered hair strands", "en": "layered hair strands", "zh": "层次发丝", "ja": "レイヤーのある髪束" },
+    "glossyHairStrands": { "value": "glossy hair strands", "en": "glossy hair strands", "zh": "高光发丝", "ja": "艶のある髪束" }
 };
 function getCurrentLanguage(){
     return document.getElementById("language")?.value || "en";
@@ -1319,7 +1363,10 @@ function getCharacterData(){
         hair: {
             length: getValue("hairLength"),
             color: getValue("hairColor"),
-            texture: getValue("hairTexture")
+            texture: getValue("hairTexture"),
+            condition: getValue("hairCondition"),
+            bangs: getValue("bangsShape"),
+            strands: getValue("hairStrands")
         },
 
         appearance: {
@@ -1370,6 +1417,9 @@ function generatePrompt(){
         data.hair.length,
         data.hair.color,
         data.hair.texture,
+        data.hair.condition,
+        data.hair.bangs,
+        data.hair.strands,
 
         data.appearance.face,
         data.appearance.expression,
