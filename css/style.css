@@ -132,3 +132,24 @@ select.compact-select{
     margin-top:4px;
     margin-bottom:4px;
 }
+
+
+.body-top-controls{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.body-control{
+    display:flex;
+    flex-direction:column;
+}
+
+.body-control label{
+    margin-top:10px;
+}
+
+.body-control select{
+    max-width:180px;
+}

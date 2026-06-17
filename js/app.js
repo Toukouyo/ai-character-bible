@@ -151,6 +151,16 @@ const UI_LABELS = {
         "zh": "体型标签",
         "ja": "体型"
     },
+    "breastShapeLabel": {
+        "en": "Breast Shape",
+        "zh": "胸形",
+        "ja": "胸の形"
+    },
+    "hipShapeLabel": {
+        "en": "Hip Shape",
+        "zh": "臀形状",
+        "ja": "ヒップの形"
+    },
     "bust": {
         "en": "Bust",
         "zh": "胸围",
@@ -434,6 +444,78 @@ const OPTION_LABELS = {
         "en": "Tall and lean",
         "zh": "修长",
         "ja": "背が高く細身"
+    },
+    "breastShapeAthletic": {
+        "value": "athletic chest shape",
+        "en": "athletic",
+        "zh": "运动型",
+        "ja": "アスリート型"
+    },
+    "breastShapeCloseSet": {
+        "value": "close-set breast shape",
+        "en": "close-set",
+        "zh": "间距较近",
+        "ja": "間隔が狭い"
+    },
+    "breastShapeNatural": {
+        "value": "natural breast shape",
+        "en": "natural",
+        "zh": "自然",
+        "ja": "自然"
+    },
+    "breastShapeRound": {
+        "value": "round breast shape",
+        "en": "round",
+        "zh": "圆润",
+        "ja": "丸みのある"
+    },
+    "breastShapeTeardrop": {
+        "value": "teardrop breast shape",
+        "en": "teardrop",
+        "zh": "水滴形",
+        "ja": "しずく型"
+    },
+    "breastShapeWideSet": {
+        "value": "wide-set breast shape",
+        "en": "wide-set",
+        "zh": "间距较宽",
+        "ja": "間隔が広い"
+    },
+    "hipShapeAthletic": {
+        "value": "athletic hip shape",
+        "en": "athletic",
+        "zh": "运动型",
+        "ja": "アスリート型"
+    },
+    "hipShapeHeart": {
+        "value": "heart-shaped hips",
+        "en": "heart-shaped",
+        "zh": "心形",
+        "ja": "ハート型"
+    },
+    "hipShapeNarrow": {
+        "value": "narrow hips",
+        "en": "narrow",
+        "zh": "窄臀",
+        "ja": "細め"
+    },
+    "hipShapePear": {
+        "value": "pear-shaped hips",
+        "en": "pear-shaped",
+        "zh": "梨形",
+        "ja": "洋梨型"
+    },
+    "hipShapeRound": {
+        "value": "round hip shape",
+        "en": "round",
+        "zh": "圆润",
+        "ja": "丸みのある"
+    },
+    "hipShapeWide": {
+        "value": "wide hips",
+        "en": "wide",
+        "zh": "宽臀",
+        "ja": "広め"
     },
     "boots": {
         "value": "boots",
@@ -1227,6 +1309,8 @@ function getCharacterData(){
             heightCm: getValue("height"),
             weightKg: getValue("weight"),
             bodyType: getValue("bodyType"),
+            breastShape: getValue("breastShape"),
+            hipShape: getValue("hipShape"),
             bustCm: getValue("bust"),
             waistCm: getValue("waist"),
             hipsCm: getValue("hips")
@@ -1277,6 +1361,8 @@ function generatePrompt(){
         data.body.heightCm ? data.body.heightCm + " cm tall" : "",
         data.body.weightKg ? data.body.weightKg + " kg" : "",
         data.body.bodyType,
+        data.body.breastShape,
+        data.body.hipShape,
         data.body.bustCm && data.body.waistCm && data.body.hipsCm
             ? data.body.bustCm + "-" + data.body.waistCm + "-" + data.body.hipsCm + " body measurements"
             : "",

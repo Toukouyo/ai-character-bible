@@ -170,18 +170,48 @@
 <div class="section">
 <h2 data-i18n="bodyShape">身材</h2>
 
-<label data-i18n="bodyTypeLabel">体型标签</label>
-<select id="bodyType" onchange="applyBodyTypePreset()">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="Slender" data-i18n="bodyTypeSlender">纤细</option>
-    <option value="Slim" data-i18n="bodyTypeSlim">苗条</option>
-    <option value="Curvy" data-i18n="bodyTypeCurvy">丰满</option>
-    <option value="Athletic" data-i18n="bodyTypeAthletic">运动员型</option>
-    <option value="Hourglass" data-i18n="bodyTypeHourglass">沙漏型</option>
-    <option value="Petite" data-i18n="bodyTypePetite">娇小</option>
-    <option value="Tall and lean" data-i18n="bodyTypeTallLean">修长</option>
-    <option value="Model-like" data-i18n="bodyTypeModel">模特</option>
-</select>
+<div class="body-top-controls">
+    <div class="body-control">
+        <label data-i18n="bodyTypeLabel">体型标签</label>
+        <select id="bodyType" onchange="applyBodyTypePreset()">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="Slender" data-i18n="bodyTypeSlender">纤细</option>
+            <option value="Slim" data-i18n="bodyTypeSlim">苗条</option>
+            <option value="Curvy" data-i18n="bodyTypeCurvy">丰满</option>
+            <option value="Athletic" data-i18n="bodyTypeAthletic">运动员型</option>
+            <option value="Hourglass" data-i18n="bodyTypeHourglass">沙漏型</option>
+            <option value="Petite" data-i18n="bodyTypePetite">娇小</option>
+            <option value="Tall and lean" data-i18n="bodyTypeTallLean">修长</option>
+            <option value="Model-like" data-i18n="bodyTypeModel">模特</option>
+        </select>
+    </div>
+
+    <div class="body-control">
+        <label data-i18n="breastShapeLabel">胸形</label>
+        <select id="breastShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="natural breast shape" data-i18n="breastShapeNatural">自然</option>
+            <option value="round breast shape" data-i18n="breastShapeRound">圆润</option>
+            <option value="teardrop breast shape" data-i18n="breastShapeTeardrop">水滴形</option>
+            <option value="wide-set breast shape" data-i18n="breastShapeWideSet">间距较宽</option>
+            <option value="close-set breast shape" data-i18n="breastShapeCloseSet">间距较近</option>
+            <option value="athletic chest shape" data-i18n="breastShapeAthletic">运动型</option>
+        </select>
+    </div>
+
+    <div class="body-control">
+        <label data-i18n="hipShapeLabel">臀形状</label>
+        <select id="hipShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="round hip shape" data-i18n="hipShapeRound">圆润</option>
+            <option value="heart-shaped hips" data-i18n="hipShapeHeart">心形</option>
+            <option value="pear-shaped hips" data-i18n="hipShapePear">梨形</option>
+            <option value="athletic hip shape" data-i18n="hipShapeAthletic">运动型</option>
+            <option value="narrow hips" data-i18n="hipShapeNarrow">窄臀</option>
+            <option value="wide hips" data-i18n="hipShapeWide">宽臀</option>
+        </select>
+    </div>
+</div>
 
 <label><span data-i18n="bust">胸围</span>：<span id="bustValue">85</span> cm</label>
 <input id="bust" type="range" min="50" max="130" value="85" oninput="updateRangeValue('bust')">
