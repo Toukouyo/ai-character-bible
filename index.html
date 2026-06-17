@@ -238,37 +238,155 @@
 <label data-i18n="face">面部特征</label>
 <input id="face" placeholder="sharp eyes, beauty mark, freckles">
 
-<label data-i18n="expression">常用表情</label>
-<select id="expression">
-    <option value="" data-i18n="notSelected">未选择</option>
-    <option value="neutral expression" data-i18n="neutralExpression">平静</option>
-    <option value="gentle smile" data-i18n="gentleSmile">温柔微笑</option>
-    <option value="confident smile" data-i18n="confidentSmile">自信微笑</option>
-    <option value="serious expression" data-i18n="seriousExpression">严肃</option>
-    <option value="melancholic expression" data-i18n="melancholicExpression">忧郁</option>
-    <option value="angry expression" data-i18n="angryExpression">生气</option>
-    <option value="shy expression" data-i18n="shyExpression">害羞</option>
-    <option value="mysterious smile" data-i18n="mysteriousSmile">神秘微笑</option>
-</select>
+<div class="inline-controls face-detail-row">
+    <div class="inline-control">
+        <label data-i18n="expression">常用表情</label>
+        <select id="expression">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="neutral expression" data-i18n="neutralExpression">平静</option>
+            <option value="gentle smile" data-i18n="gentleSmile">温柔微笑</option>
+            <option value="confident smile" data-i18n="confidentSmile">自信微笑</option>
+            <option value="serious expression" data-i18n="seriousExpression">严肃</option>
+            <option value="melancholic expression" data-i18n="melancholicExpression">忧郁</option>
+            <option value="angry expression" data-i18n="angryExpression">生气</option>
+            <option value="shy expression" data-i18n="shyExpression">害羞</option>
+            <option value="mysterious smile" data-i18n="mysteriousSmile">神秘微笑</option>
+        </select>
+    </div>
 
-<label data-i18n="hat">帽子</label>
-<select id="hat">
-    <option value="" data-i18n="none">None</option>
-    <option value="bandana" data-i18n="bandana">头巾</option>
-    <option value="baseball cap" data-i18n="baseballCap">棒球帽</option>
-    <option value="beret" data-i18n="beret">贝雷帽</option>
-    <option value="beanie" data-i18n="beanie">针织帽</option>
-    <option value="wide-brim hat" data-i18n="wideBrimHat">宽檐帽</option>
-</select>
+    <div class="inline-control">
+        <label data-i18n="eyeShape">眼型</label>
+        <select id="eyeShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="phoenix eyes" data-i18n="phoenixEyes">丹凤眼</option>
+            <option value="almond eyes" data-i18n="almondEyes">杏眼</option>
+            <option value="round eyes" data-i18n="roundEyes">圆眼</option>
+            <option value="upturned eyes" data-i18n="upturnedEyes">上挑眼</option>
+            <option value="downturned eyes" data-i18n="downturnedEyes">下垂眼</option>
+        </select>
+    </div>
 
-<label data-i18n="neck">颈部装饰</label>
-<select id="neck">
-    <option value="" data-i18n="none">None</option>
-    <option value="necklace" data-i18n="necklace">项链</option>
-    <option value="choker" data-i18n="choker">项圈</option>
-    <option value="scarf" data-i18n="scarf">围巾</option>
-    <option value="silk scarf" data-i18n="silkScarf">丝巾</option>
-</select>
+    <div class="inline-control">
+        <label data-i18n="eyeColor">眼色</label>
+        <select id="eyeColor">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="black eyes" data-i18n="blackEyes">黑</option>
+            <option value="brown eyes" data-i18n="brownEyes">棕</option>
+            <option value="blue eyes" data-i18n="blueEyes">蓝</option>
+            <option value="green eyes" data-i18n="greenEyes">绿</option>
+            <option value="gray eyes" data-i18n="grayEyes">灰</option>
+            <option value="heterochromia eyes" data-i18n="heterochromiaEyes">异色瞳</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="eyeGaze">眼神</label>
+        <select id="eyeGaze">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="sharp gaze" data-i18n="sharpGaze">锐利</option>
+            <option value="gentle gaze" data-i18n="gentleGaze">温柔</option>
+            <option value="cold elegant gaze" data-i18n="coldElegantGaze">冷艳</option>
+            <option value="distant gaze" data-i18n="distantGaze">疏离</option>
+            <option value="innocent gaze" data-i18n="innocentGaze">清澈</option>
+        </select>
+    </div>
+</div>
+
+<div class="inline-controls face-detail-row">
+    <div class="inline-control">
+        <label data-i18n="hat">帽子</label>
+        <select id="hat">
+            <option value="" data-i18n="none">None</option>
+            <option value="bandana" data-i18n="bandana">头巾</option>
+            <option value="baseball cap" data-i18n="baseballCap">棒球帽</option>
+            <option value="beret" data-i18n="beret">贝雷帽</option>
+            <option value="beanie" data-i18n="beanie">针织帽</option>
+            <option value="wide-brim hat" data-i18n="wideBrimHat">宽檐帽</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="noseShape">鼻子</label>
+        <select id="noseShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="straight nose" data-i18n="straightNose">直鼻</option>
+            <option value="small nose" data-i18n="smallNose">小巧鼻</option>
+            <option value="high nose bridge" data-i18n="highNoseBridge">高鼻梁</option>
+            <option value="button nose" data-i18n="buttonNose">圆鼻头</option>
+            <option value="sharp nose" data-i18n="sharpNose">尖鼻</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="lipsShape">嘴唇</label>
+        <select id="lipsShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="thin lips" data-i18n="thinLips">薄唇</option>
+            <option value="full lips" data-i18n="fullLips">厚唇</option>
+            <option value="small lips" data-i18n="smallLips">小巧唇</option>
+            <option value="heart-shaped lips" data-i18n="heartShapedLips">心形唇</option>
+            <option value="soft lips" data-i18n="softLips">柔和唇形</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="faceShape">脸型</label>
+        <select id="faceShape">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="oval face" data-i18n="ovalFace">瓜子脸</option>
+            <option value="heart-shaped face" data-i18n="heartShapedFace">心形脸</option>
+            <option value="round face" data-i18n="roundFace">圆脸</option>
+            <option value="V-shaped face" data-i18n="vShapedFace">V脸</option>
+            <option value="square face" data-i18n="squareFace">方脸</option>
+        </select>
+    </div>
+</div>
+
+<div class="inline-controls face-detail-row">
+    <div class="inline-control">
+        <label data-i18n="neck">颈部装饰</label>
+        <select id="neck">
+            <option value="" data-i18n="none">None</option>
+            <option value="necklace" data-i18n="necklace">项链</option>
+            <option value="choker" data-i18n="choker">项圈</option>
+            <option value="scarf" data-i18n="scarf">围巾</option>
+            <option value="silk scarf" data-i18n="silkScarf">丝巾</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="skinTexture">皮肤质感</label>
+        <select id="skinTexture">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="smooth skin" data-i18n="smoothSkin">光滑</option>
+            <option value="visible pores" data-i18n="visiblePores">毛孔</option>
+            <option value="delicate skin texture" data-i18n="delicateSkinTexture">细腻</option>
+            <option value="slightly rough skin texture" data-i18n="roughSkinTexture">微粗糙</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="skinMarks">皮肤标记</label>
+        <select id="skinMarks">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="beauty mark" data-i18n="beautyMark">痣</option>
+            <option value="freckles" data-i18n="freckles">雀斑</option>
+            <option value="birthmark" data-i18n="birthmark">胎记</option>
+            <option value="moles and freckles" data-i18n="molesAndFreckles">痣和雀斑</option>
+        </select>
+    </div>
+
+    <div class="inline-control">
+        <label data-i18n="skinScar">疤痕</label>
+        <select id="skinScar">
+            <option value="" data-i18n="notSelected">未选择</option>
+            <option value="no visible scars" data-i18n="noVisibleScars">无明显疤痕</option>
+            <option value="small scar" data-i18n="smallScar">小疤痕</option>
+            <option value="visible scar" data-i18n="visibleScar">明显疤痕</option>
+            <option value="facial scar" data-i18n="facialScar">脸部疤痕</option>
+        </select>
+    </div>
+</div>
 
 <hr>
 
