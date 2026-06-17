@@ -250,6 +250,26 @@ const UI_LABELS = {
         "zh": "下衣",
         "ja": "下衣"
     },
+    "underwear": {
+        "en": "Underwear",
+        "zh": "内衣",
+        "ja": "下着"
+    },
+    "clothingMaterial": {
+        "en": "Material",
+        "zh": "材质",
+        "ja": "素材"
+    },
+    "clothingPattern": {
+        "en": "Pattern",
+        "zh": "图案",
+        "ja": "柄"
+    },
+    "clothingDetails": {
+        "en": "Other",
+        "zh": "其他",
+        "ja": "その他"
+    },
     "limbsAndShoes": {
         "en": "Limbs & Shoes",
         "zh": "四肢与鞋",
@@ -762,6 +782,126 @@ const OPTION_LABELS = {
         "en": "jumpsuit",
         "zh": "连体裤",
         "ja": "ジャンプスーツ"
+    },
+    "underwearBasic": {
+        "value": "underwear",
+        "en": "underwear",
+        "zh": "内衣",
+        "ja": "下着"
+    },
+    "camisole": {
+        "value": "camisole",
+        "en": "camisole",
+        "zh": "吊带背心",
+        "ja": "キャミソール"
+    },
+    "sportsBra": {
+        "value": "sports bra",
+        "en": "sports bra",
+        "zh": "运动内衣",
+        "ja": "スポーツブラ"
+    },
+    "briefs": {
+        "value": "briefs",
+        "en": "briefs",
+        "zh": "三角内裤",
+        "ja": "ブリーフ"
+    },
+    "boxerShorts": {
+        "value": "boxer shorts",
+        "en": "boxer shorts",
+        "zh": "四角内裤",
+        "ja": "ボクサーパンツ"
+    },
+    "clothingMaterialSilk": {
+        "value": "silk clothing material",
+        "en": "silk",
+        "zh": "丝绸",
+        "ja": "シルク"
+    },
+    "clothingMaterialLeather": {
+        "value": "leather clothing material",
+        "en": "leather",
+        "zh": "皮革",
+        "ja": "レザー"
+    },
+    "clothingMaterialLace": {
+        "value": "lace clothing material",
+        "en": "lace",
+        "zh": "蕾丝",
+        "ja": "レース"
+    },
+    "clothingMaterialLatex": {
+        "value": "latex clothing material",
+        "en": "latex",
+        "zh": "latex",
+        "ja": "ラテックス"
+    },
+    "clothingMaterialCotton": {
+        "value": "cotton clothing material",
+        "en": "cotton",
+        "zh": "棉质",
+        "ja": "コットン"
+    },
+    "patternSolid": {
+        "value": "solid color pattern",
+        "en": "solid color",
+        "zh": "纯色",
+        "ja": "無地"
+    },
+    "patternCheckered": {
+        "value": "checkered pattern",
+        "en": "checkered",
+        "zh": "格子",
+        "ja": "チェック柄"
+    },
+    "patternFloral": {
+        "value": "floral pattern",
+        "en": "floral pattern",
+        "zh": "花纹",
+        "ja": "花柄"
+    },
+    "patternGradient": {
+        "value": "gradient pattern",
+        "en": "gradient",
+        "zh": "渐变",
+        "ja": "グラデーション"
+    },
+    "detailSemiTransparent": {
+        "value": "semi-transparent clothing",
+        "en": "semi-transparent",
+        "zh": "半透明",
+        "ja": "半透明"
+    },
+    "detailHighlyTransparent": {
+        "value": "highly transparent clothing",
+        "en": "highly transparent",
+        "zh": "高度透明",
+        "ja": "高透明"
+    },
+    "detailDamaged": {
+        "value": "damaged clothing",
+        "en": "damaged",
+        "zh": "破损",
+        "ja": "ダメージ加工"
+    },
+    "detailTight": {
+        "value": "tight-fitting clothing",
+        "en": "tight-fitting",
+        "zh": "紧身",
+        "ja": "タイト"
+    },
+    "detailLoose": {
+        "value": "loose-fitting clothing",
+        "en": "loose-fitting",
+        "zh": "宽松",
+        "ja": "ルーズ"
+    },
+    "detailLayered": {
+        "value": "layered clothing",
+        "en": "layered",
+        "zh": "层叠",
+        "ja": "レイヤード"
     },
     "kneeSocks": {
         "value": "knee socks",
@@ -1442,6 +1582,10 @@ function getCharacterData(){
             onesuit: getValue("onesuit"),
             top: getValue("top"),
             bottom: getValue("bottom"),
+            underwear: getValue("underwear"),
+            material: getValue("clothingMaterial"),
+            pattern: getValue("clothingPattern"),
+            details: getCheckedValues("clothingDetail"),
             hand: getValue("hand"),
             leg: getValue("leg"),
             shoes: getValue("shoes")
@@ -1500,6 +1644,10 @@ function generatePrompt(){
         data.clothing.onesuit,
         data.clothing.top,
         data.clothing.bottom,
+        data.clothing.underwear,
+        data.clothing.material,
+        data.clothing.pattern,
+        ...data.clothing.details,
         data.clothing.hand,
         data.clothing.leg,
         data.clothing.shoes,
