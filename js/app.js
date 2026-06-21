@@ -3817,7 +3817,9 @@ function applyBodyTypePreset(){
 }
 
 function getValue(id){
-    return document.getElementById(id).value.trim();
+    const element = document.getElementById(id);
+    if(!element) return "";
+    return (element.value ?? "").trim();
 }
 
 function getCheckedValues(className){
