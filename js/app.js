@@ -202,6 +202,7 @@ const UI_LABELS = {
         "ja": "顔の特徴"
     },
     "eyeShape": { "en": "Eye Shape", "zh": "眼型", "ja": "目の形" },
+    "eyeShapeDetail": { "en": "Eye Detail", "zh": "眼型细节", "ja": "目の細部" },
     "eyeColor": { "en": "Eye Color", "zh": "眼色", "ja": "目の色" },
     "eyeGaze": { "en": "Gaze", "zh": "眼神", "ja": "眼差し" },
     "noseShape": { "en": "Nose", "zh": "鼻子", "ja": "鼻" },
@@ -1000,49 +1001,18 @@ const FORM_CONFIG = {
             }
         ],
         "eyeShape": [
-            {
-                "key": "notSelected",
-                "value": "",
-                "en": "Not selected",
-                "zh": "未选择",
-                "ja": "未選択"
-            },
-            {
-                "key": "phoenixEyes",
-                "value": "phoenix eyes",
-                "en": "phoenix eyes",
-                "zh": "丹凤眼",
-                "ja": "切れ長の目"
-            },
-            {
-                "key": "almondEyes",
-                "value": "almond eyes",
-                "en": "almond eyes",
-                "zh": "杏眼",
-                "ja": "アーモンドアイ"
-            },
-            {
-                "key": "roundEyes",
-                "value": "round eyes",
-                "en": "round eyes",
-                "zh": "圆眼",
-                "ja": "丸い目"
-            },
-            {
-                "key": "upturnedEyes",
-                "value": "upturned eyes",
-                "en": "upturned eyes",
-                "zh": "上挑眼",
-                "ja": "つり目"
-            },
-            {
-                "key": "downturnedEyes",
-                "value": "downturned eyes",
-                "en": "downturned eyes",
-                "zh": "下垂眼",
-                "ja": "たれ目"
-            }
+            { "key": "notSelected", "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+            { "key": "phoenixEyes", "value": "phoenix eyes, sharp upturned eyes", "en": "phoenix eyes / tsurime", "zh": "丹凤眼 / Tsurime", "ja": "丹鳳眼 / つり目" },
+            { "key": "almondEyes", "value": "almond eyes", "en": "almond eyes", "zh": "杏眼", "ja": "アーモンドアイ" },
+            { "key": "roundEyes", "value": "round eyes, large innocent eyes", "en": "round eyes / large round eyes", "zh": "圆眼 / 大圆眼", "ja": "丸い目 / 大きな丸い目" },
+            { "key": "upturnedEyes", "value": "upturned eyes, strong sharp eyes", "en": "upturned eyes", "zh": "上挑眼", "ja": "つり目" },
+            { "key": "downturnedEyes", "value": "downturned eyes, gentle tareme eyes", "en": "downturned eyes / tareme", "zh": "下垂眼 / Tareme", "ja": "たれ目" },
+            { "key": "narrowEyes", "value": "narrow half-closed eyes, mysterious eyes", "en": "narrow slit eyes", "zh": "细长眯眼", "ja": "細い半目" },
+            { "key": "jitomeEyes", "value": "jitome eyes, half-closed unimpressed eyes", "en": "jitome", "zh": "Jitome / 死鱼眼", "ja": "ジト目" },
+            { "key": "sanpakuEyes", "value": "sanpaku eyes, dangerous intense eyes", "en": "sanpaku eyes", "zh": "Sanpaku / 三白眼", "ja": "三白眼" },
+            { "key": "specialEyes", "value": "special eyes", "en": "special eyes", "zh": "特殊眼型", "ja": "特殊な目" }
         ],
+
         "eyeColor": [
             {
                 "key": "notSelected",
@@ -2628,6 +2598,54 @@ const FORM_CONFIG = {
     }
 };
 
+const EYE_SHAPE_DETAIL_OPTIONS = {
+    "": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" }
+    ],
+
+    "phoenix eyes, sharp upturned eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "fox-like eyes", "en": "fox-like eyes", "zh": "狐眼", "ja": "狐目" },
+        { "value": "strongly upturned eye corners", "en": "stronger upturned corners", "zh": "上挑强化", "ja": "つり目強調" },
+        { "value": "star-shaped pupils", "en": "star-shaped pupils", "zh": "星形瞳孔", "ja": "星形の瞳孔" },
+        { "value": "glowing eyes", "en": "glowing eyes", "zh": "发光", "ja": "発光する目" }
+    ],
+
+    "almond eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "bright eye highlights", "en": "bright highlights", "zh": "带高光", "ja": "ハイライト入り" },
+        { "value": "normal round pupils", "en": "normal round pupils", "zh": "普通圆瞳", "ja": "普通の丸い瞳孔" }
+    ],
+
+    "round eyes, large innocent eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "extra large eyes", "en": "extra large", "zh": "超大", "ja": "非常に大きい目" },
+        { "value": "watery eyes", "en": "watery", "zh": "水润", "ja": "潤んだ目" },
+        { "value": "sparkling eyes", "en": "sparkling", "zh": "闪耀", "ja": "きらめく目" }
+    ],
+
+    "upturned eyes, strong sharp eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "sharp eye corners", "en": "sharp corners", "zh": "锐利眼角", "ja": "鋭い目尻" },
+        { "value": "dominant gaze", "en": "dominant gaze", "zh": "强势眼神", "ja": "強気な眼差し" }
+    ],
+
+    "downturned eyes, gentle tareme eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "soft rounded eyes", "en": "soft rounded", "zh": "柔和圆润", "ja": "柔らかく丸い目" },
+        { "value": "strongly drooping eye corners", "en": "stronger drooping corners", "zh": "垂眼强化", "ja": "たれ目強調" }
+    ],
+
+    "special eyes": [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" },
+        { "value": "cat eyes, slit pupils", "en": "cat eyes / slit pupils", "zh": "猫眼 / 狭缝瞳", "ja": "猫目 / 縦長の瞳孔" },
+        { "value": "heterochromia eyes", "en": "heterochromia", "zh": "异色眼", "ja": "オッドアイ" },
+        { "value": "custom eye design", "en": "custom", "zh": "自定义", "ja": "カスタム" }
+    ]
+};
+
+
+
 
 // OPTION_LABELS stores selectable character tags.
 // value is always English and is used in generated prompts / exported JSON.
@@ -3736,6 +3754,33 @@ function renderConfiguredOptions(){
             container.appendChild(label);
         });
     });
+    renderEyeShapeDetails();
+}
+
+
+
+function renderEyeShapeDetails(){
+    const eyeShapeSelect = document.getElementById("eyeShape");
+    const detailSelect = document.getElementById("eyeShapeDetail");
+    if(!eyeShapeSelect || !detailSelect) return;
+
+    const currentValue = detailSelect.value;
+    const options = EYE_SHAPE_DETAIL_OPTIONS[eyeShapeSelect.value] || [
+        { "value": "", "en": "Not selected", "zh": "未选择", "ja": "未選択" }
+    ];
+
+    detailSelect.innerHTML = "";
+
+    options.forEach(option => {
+        const element = document.createElement("option");
+        element.value = option.value;
+        element.textContent = optionText(option);
+        detailSelect.appendChild(element);
+    });
+
+    if([...detailSelect.options].some(option => option.value === currentValue)){
+        detailSelect.value = currentValue;
+    }
 }
 
 function applyOptionLabels(){
@@ -3889,9 +3934,12 @@ function getCharacterData(){
         appearance: {
             face: getValue("face"),
             expression: getValue("expression"),
+
             eyeShape: getValue("eyeShape"),
+            eyeShapeDetail: getValue("eyeShapeDetail"),
             eyeColor: getValue("eyeColor"),
             eyeGaze: getValue("eyeGaze"),
+
             hat: getValue("hat"),
             noseShape: getValue("noseShape"),
             lipsShape: getValue("lipsShape"),
@@ -3964,9 +4012,12 @@ function generatePrompt(){
 
         data.appearance.face,
         data.appearance.expression,
+
         data.appearance.eyeShape,
+        data.appearance.eyeShapeDetail,
         data.appearance.eyeColor,
         data.appearance.eyeGaze,
+
         data.appearance.hat,
         data.appearance.noseShape,
         data.appearance.lipsShape,
@@ -4069,9 +4120,13 @@ function applyCharacterData(data){
 
     setValue("face", data.appearance?.face);
     setValue("expression", data.appearance?.expression);
+
     setValue("eyeShape", data.appearance?.eyeShape);
+    renderEyeShapeDetails();
+    setValue("eyeShapeDetail", data.appearance?.eyeShapeDetail);
     setValue("eyeColor", data.appearance?.eyeColor);
     setValue("eyeGaze", data.appearance?.eyeGaze);
+
     setValue("hat", data.appearance?.hat);
     setValue("noseShape", data.appearance?.noseShape);
     setValue("lipsShape", data.appearance?.lipsShape);
@@ -4168,6 +4223,14 @@ function changeLanguage(){
 
     applyOptionLabels();
 }
+
+
+document.getElementById("eyeShape")?.addEventListener("change", () => {
+    renderEyeShapeDetails();
+    generatePrompt();
+});
+
+document.getElementById("eyeShapeDetail")?.addEventListener("change", generatePrompt);
 
 toggleClothes();
 changeLanguage();
